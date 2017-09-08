@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 
 # import apis into api package
-from .back_order_api import BackOrderApi
 from .cancellation_api import CancellationApi
 from .client_api import ClientApi
 from .offer_api import OfferApi
