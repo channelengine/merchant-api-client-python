@@ -4,7 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**list[ChannelReturnResponse]**](ChannelReturnResponse.md) |  | [optional] 
-**count** | **int** |  | [optional] 
+**count** | **int** | The number of items in the current response | [optional] 
+**total_count** | **int** | The total number of items | [optional] 
+**items_per_page** | **int** | The number of items per page | [optional] 
 **status_code** | **int** |  | [optional] 
 **success** | **bool** |  | [optional] 
 **message** | **str** |  | [optional] 
