@@ -65,6 +65,7 @@ class ChannelReturnRequest(object):
         self._merchant_comment = None
         self._refund_incl_vat = None
         self._refund_excl_vat = None
+        self.discriminator = None
 
         self.channel_order_no = channel_order_no
         self.channel_reference = channel_reference

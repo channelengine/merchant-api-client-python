@@ -47,6 +47,7 @@ class ChannelReferencesRequest(object):
 
         self._id = None
         self._channel_product_no = None
+        self.discriminator = None
 
         if id is not None:
           self.id = id

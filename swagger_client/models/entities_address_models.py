@@ -77,6 +77,7 @@ class EntitiesAddressModels(object):
         self._region = None
         self._country_iso = None
         self._original = None
+        self.discriminator = None
 
         if gender is not None:
           self.gender = gender

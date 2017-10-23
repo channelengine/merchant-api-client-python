@@ -50,6 +50,7 @@ class ProductCreationResult(object):
         self._rejected_count = None
         self._accepted_count = None
         self._product_messages = None
+        self.discriminator = None
 
         if rejected_count is not None:
           self.rejected_count = rejected_count

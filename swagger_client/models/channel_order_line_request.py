@@ -59,6 +59,7 @@ class ChannelOrderLineRequest(object):
         self._fee_fixed = None
         self._fee_rate = None
         self._condition = None
+        self.discriminator = None
 
         self.channel_product_no = channel_product_no
         self.quantity = quantity

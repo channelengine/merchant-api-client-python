@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**product_acknowledge_data_changes**](ProductApi.md#product_acknowledge_data_changes) | **POST** /v2/products/data | Channel: Acknowledge Product Data Changes
 [**product_acknowledge_offer_changes**](ProductApi.md#product_acknowledge_offer_changes) | **POST** /v2/products/offers | Channel: Acknowledge Product Offer Changes
-[**product_create**](ProductApi.md#product_create) | **POST** /v2/products | Merchant: Create Product
+[**product_create**](ProductApi.md#product_create) | **POST** /v2/products | Merchant: Upsert Products
 [**product_delete**](ProductApi.md#product_delete) | **DELETE** /v2/products/{merchantProductNo} | Merchant: Delete Product
 [**product_get_by_merchant_product_no**](ProductApi.md#product_get_by_merchant_product_no) | **GET** /v2/products/merchant/{merchantProductNo} | Merchant: Get Product
 [**product_get_data_changes**](ProductApi.md#product_get_data_changes) | **GET** /v2/products/data | Channel: Get Product Data Changes
@@ -22,19 +22,20 @@ For channels.                This endpoint should be called after a call to GET 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 changes = swagger_client.ChannelProcessedChangesRequest() # ChannelProcessedChangesRequest | The merchant references of the products which have been                successfully created, updated or deleted (after a call to 'GetDataChanges')
 
 try: 
@@ -75,19 +76,20 @@ For channels.                After a call to GET 'v2/products/offers' this endpo
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 changes = [swagger_client.list[str]()] # list[str] | The channel references of the updated products
 
 try: 
@@ -122,29 +124,30 @@ Name | Type | Description  | Notes
 # **product_create**
 > SingleOfProductCreationResult product_create(products)
 
-Merchant: Create Product
+Merchant: Upsert Products
 
-For merchants.    Create a product. The parent serves as the 'base' product of the children.  For example, the children could be different sizes or colors of the parent product.  For channels where every size and color are different products this does not make any difference  (the children will just be sent separately, while ignoring the parent).  But there are channels where the parent and the children need to be sent together, for example  when there is one product with a list of sizes. In this case all the product information is retrieved  from the parent product while the size list is generated from the children.    Note that the parent itself is a 'blueprint' of the child products and we do our best to make sure it  does not end up on the marketplaces itself. Only the children can be purchased.    It's not possible to nest parent and children more than one level (A parent can have many children,  but any child cannot itself also have children).    The supplied MerchantProductNo needs to be unique.
+For merchants.    Upsert (update or create) products. The parent serves as the 'base' product of the children.  For example, the children could be different sizes or colors of the parent product.  For channels where every size and color are different products this does not make any difference  (the children will just be sent separately, while ignoring the parent).  But there are channels where the parent and the children need to be sent together, for example  when there is one product with a list of sizes. In this case all the product information is retrieved  from the parent product while the size list is generated from the children.    Note that the parent itself is a 'blueprint' of the child products and we do our best to make sure it  does not end up on the marketplaces itself. Only the children can be purchased.    It's not possible to nest parent and children more than one level (A parent can have many children,  but any child cannot itself also have children).    The supplied MerchantProductNo needs to be unique.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 products = [swagger_client.MerchantProductRequest()] # list[MerchantProductRequest] | 
 
 try: 
-    # Merchant: Create Product
+    # Merchant: Upsert Products
     api_response = api_instance.product_create(products)
     pprint(api_response)
 except ApiException as e:
@@ -177,23 +180,24 @@ Name | Type | Description  | Notes
 
 Merchant: Delete Product
 
-For merchants.    Deactivate a product based on the merchant reference.  Note that we do not really delete a product, as the product  might still be referenced by orders etc. Therefore, the references  used for this product cannot be reused. We do however deactivate the product  which means that it will not be sent to channels.
+For merchants.    Delete a product based on the merchant reference.  Note that we do not really delete a product, as the product  might still be referenced by orders etc. Therefore, the references  used for this product cannot be reused. We do however deactivate the product  which means that it will not be sent to channels.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 merchant_product_no = 'merchant_product_no_example' # str | 
 
 try: 
@@ -234,19 +238,20 @@ For merchants.    Retrieve a product based on the merchant reference.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 merchant_product_no = 'merchant_product_no_example' # str | 
 
 try: 
@@ -287,19 +292,20 @@ For channels.    Get all products which have changes since the post http call to
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 max_count = 56 # int | Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. (optional)
 
 try: 
@@ -340,19 +346,20 @@ For channels.                GET 'v2/products/offers' and POST 'v2/products/offe
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi()
+api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
 
 try: 
     # Channel: Get Product Offer Changes

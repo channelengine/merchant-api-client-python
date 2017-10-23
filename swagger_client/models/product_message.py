@@ -53,6 +53,7 @@ class ProductMessage(object):
         self._reference = None
         self._warnings = None
         self._errors = None
+        self.discriminator = None
 
         if name is not None:
           self.name = name

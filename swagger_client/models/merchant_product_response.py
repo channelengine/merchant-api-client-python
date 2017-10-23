@@ -98,6 +98,7 @@ class MerchantProductResponse(object):
         self._image_url = None
         self._category_trail = None
         self._extra_data = None
+        self.discriminator = None
 
         if is_active is not None:
           self.is_active = is_active

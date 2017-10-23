@@ -28,12 +28,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
 model = swagger_client.OrderAcknowledgement() # OrderAcknowledgement | Relations between the id's returned by ChannelEngine and the references which the merchant uses
 
 try: 
@@ -81,12 +82,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
 model = swagger_client.ChannelOrderRequest() # ChannelOrderRequest | 
 
 try: 
@@ -134,12 +136,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
 filter_statuses = ['filter_statuses_example'] # list[str] |  (optional)
 filter_merchant_order_nos = ['filter_merchant_order_nos_example'] # list[str] |  (optional)
 filter_exclude_marketplace_fulfilled_orders_and_lines = true # bool |  (optional)
@@ -195,12 +198,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
 
 try: 
     # Merchant: Get New Orders
@@ -244,12 +248,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
 merchant_order_no = 'merchant_order_no_example' # str | The unique order reference as used by the merchant
 use_customer_culture = true # bool | Generate the invoice in the billing address' country's language (optional)
 
@@ -299,12 +304,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi()
+api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
 merchant_order_no = 'merchant_order_no_example' # str | The unique order reference as used by the merchant
 use_customer_culture = true # bool | Generate the invoice in the billing address' country's language (optional)
 

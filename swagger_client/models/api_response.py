@@ -53,6 +53,7 @@ class ApiResponse(object):
         self._success = None
         self._message = None
         self._validation_errors = None
+        self.discriminator = None
 
         if status_code is not None:
           self.status_code = status_code

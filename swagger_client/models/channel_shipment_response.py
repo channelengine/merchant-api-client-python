@@ -56,6 +56,7 @@ class ChannelShipmentResponse(object):
         self._track_trace_no = None
         self._track_trace_url = None
         self._method = None
+        self.discriminator = None
 
         self.channel_order_no = channel_order_no
         self.lines = lines

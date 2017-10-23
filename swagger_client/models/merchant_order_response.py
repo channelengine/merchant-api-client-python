@@ -95,6 +95,7 @@ class MerchantOrderResponse(object):
         self._billing_address = None
         self._shipping_address = None
         self._extra_data = None
+        self.discriminator = None
 
         if id is not None:
           self.id = id

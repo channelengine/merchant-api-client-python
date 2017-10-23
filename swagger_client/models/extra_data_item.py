@@ -53,6 +53,7 @@ class ExtraDataItem(object):
         self._value = None
         self._type = None
         self._is_public = None
+        self.discriminator = None
 
         if key is not None:
           self.key = key

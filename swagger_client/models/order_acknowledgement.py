@@ -47,6 +47,7 @@ class OrderAcknowledgement(object):
 
         self._merchant_order_no = None
         self._order_id = None
+        self.discriminator = None
 
         self.merchant_order_no = merchant_order_no
         self.order_id = order_id

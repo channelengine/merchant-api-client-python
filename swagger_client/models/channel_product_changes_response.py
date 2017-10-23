@@ -50,6 +50,7 @@ class ChannelProductChangesResponse(object):
         self._to_be_created = None
         self._to_be_updated = None
         self._to_be_removed = None
+        self.discriminator = None
 
         if to_be_created is not None:
           self.to_be_created = to_be_created

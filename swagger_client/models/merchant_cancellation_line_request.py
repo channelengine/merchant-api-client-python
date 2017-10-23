@@ -47,6 +47,7 @@ class MerchantCancellationLineRequest(object):
 
         self._merchant_product_no = None
         self._quantity = None
+        self.discriminator = None
 
         self.merchant_product_no = merchant_product_no
         self.quantity = quantity

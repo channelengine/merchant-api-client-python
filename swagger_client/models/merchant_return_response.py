@@ -62,6 +62,7 @@ class MerchantReturnResponse(object):
         self._merchant_comment = None
         self._refund_incl_vat = None
         self._refund_excl_vat = None
+        self.discriminator = None
 
         if merchant_order_no is not None:
           self.merchant_order_no = merchant_order_no

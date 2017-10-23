@@ -20,7 +20,6 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
-from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -32,35 +31,27 @@ class OrderApi(object):
     """
 
     def __init__(self, api_client=None):
-        config = Configuration()
-        if api_client:
-            self.api_client = api_client
-        else:
-            if not config.api_client:
-                config.api_client = ApiClient()
-            self.api_client = config.api_client
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
 
     def order_acknowledge(self, model, **kwargs):
         """
         Merchant: Acknowledge Order
         For merchants.    Acknowledge an order. By acknowledging the order the merchant can confirm that  the order has been imported. When acknowledging an order the merchant has to supply  references that uniquely identify the order and the order lines. These references  will be used in the other API calls.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_acknowledge(model, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_acknowledge(model, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param OrderAcknowledgement model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.order_acknowledge_with_http_info(model, **kwargs)
         else:
             (data) = self.order_acknowledge_with_http_info(model, **kwargs)
@@ -71,15 +62,11 @@ class OrderApi(object):
         Merchant: Acknowledge Order
         For merchants.    Acknowledge an order. By acknowledging the order the merchant can confirm that  the order has been imported. When acknowledging an order the merchant has to supply  references that uniquely identify the order and the order lines. These references  will be used in the other API calls.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_acknowledge_with_http_info(model, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_acknowledge_with_http_info(model, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param OrderAcknowledgement model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
         :return: ApiResponse
                  If the method is called asynchronously,
@@ -87,7 +74,7 @@ class OrderApi(object):
         """
 
         all_params = ['model']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -140,7 +127,7 @@ class OrderApi(object):
                                         files=local_var_files,
                                         response_type='ApiResponse',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -151,22 +138,18 @@ class OrderApi(object):
         Channel: Create Order
         For channels.    Create a new order in ChannelEngine.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_create(model, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_create(model, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ChannelOrderRequest model:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.order_create_with_http_info(model, **kwargs)
         else:
             (data) = self.order_create_with_http_info(model, **kwargs)
@@ -177,15 +160,11 @@ class OrderApi(object):
         Channel: Create Order
         For channels.    Create a new order in ChannelEngine.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_create_with_http_info(model, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_create_with_http_info(model, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ChannelOrderRequest model:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
@@ -193,7 +172,7 @@ class OrderApi(object):
         """
 
         all_params = ['model']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -246,7 +225,7 @@ class OrderApi(object):
                                         files=local_var_files,
                                         response_type='ApiResponse',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -257,15 +236,11 @@ class OrderApi(object):
         Merchant: Get Orders By Filter
         For merchants.                Fetch orders based on the provided OrderFilter
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_get_by_filter(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_get_by_filter(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param list[str] filter_statuses:
         :param list[str] filter_merchant_order_nos:
         :param bool filter_exclude_marketplace_fulfilled_orders_and_lines:
@@ -276,7 +251,7 @@ class OrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.order_get_by_filter_with_http_info(**kwargs)
         else:
             (data) = self.order_get_by_filter_with_http_info(**kwargs)
@@ -287,15 +262,11 @@ class OrderApi(object):
         Merchant: Get Orders By Filter
         For merchants.                Fetch orders based on the provided OrderFilter
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_get_by_filter_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_get_by_filter_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param list[str] filter_statuses:
         :param list[str] filter_merchant_order_nos:
         :param bool filter_exclude_marketplace_fulfilled_orders_and_lines:
@@ -307,7 +278,7 @@ class OrderApi(object):
         """
 
         all_params = ['filter_statuses', 'filter_merchant_order_nos', 'filter_exclude_marketplace_fulfilled_orders_and_lines', 'filter_fulfillment_type', 'filter_page']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -363,7 +334,7 @@ class OrderApi(object):
                                         files=local_var_files,
                                         response_type='CollectionOfMerchantOrderResponse',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -374,21 +345,17 @@ class OrderApi(object):
         Merchant: Get New Orders
         For merchants.                Fetch newly placed orders (order with status NEW).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_get_new(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_get_new(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.order_get_new_with_http_info(**kwargs)
         else:
             (data) = self.order_get_new_with_http_info(**kwargs)
@@ -399,22 +366,18 @@ class OrderApi(object):
         Merchant: Get New Orders
         For merchants.                Fetch newly placed orders (order with status NEW).
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_get_new_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_get_new_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -457,7 +420,7 @@ class OrderApi(object):
                                         files=local_var_files,
                                         response_type='CollectionOfMerchantOrderResponse',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -468,15 +431,11 @@ class OrderApi(object):
         Merchant: Download Invoice
         For merchants.    Generates the ChannelEngine VAT invoice for this order in PDF
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_invoice(merchant_order_no, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_invoice(merchant_order_no, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -484,7 +443,7 @@ class OrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.order_invoice_with_http_info(merchant_order_no, **kwargs)
         else:
             (data) = self.order_invoice_with_http_info(merchant_order_no, **kwargs)
@@ -495,15 +454,11 @@ class OrderApi(object):
         Merchant: Download Invoice
         For merchants.    Generates the ChannelEngine VAT invoice for this order in PDF
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_invoice_with_http_info(merchant_order_no, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_invoice_with_http_info(merchant_order_no, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -512,7 +467,7 @@ class OrderApi(object):
         """
 
         all_params = ['merchant_order_no', 'use_customer_culture']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -563,7 +518,7 @@ class OrderApi(object):
                                         files=local_var_files,
                                         response_type='file',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -574,15 +529,11 @@ class OrderApi(object):
         Merchant: Download Packing Slip
         For merchants.    Generates the ChannelEngine packing slip for this order in PDF
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_packing_slip(merchant_order_no, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_packing_slip(merchant_order_no, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -590,7 +541,7 @@ class OrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.order_packing_slip_with_http_info(merchant_order_no, **kwargs)
         else:
             (data) = self.order_packing_slip_with_http_info(merchant_order_no, **kwargs)
@@ -601,15 +552,11 @@ class OrderApi(object):
         Merchant: Download Packing Slip
         For merchants.    Generates the ChannelEngine packing slip for this order in PDF
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.order_packing_slip_with_http_info(merchant_order_no, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.order_packing_slip_with_http_info(merchant_order_no, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -618,7 +565,7 @@ class OrderApi(object):
         """
 
         all_params = ['merchant_order_no', 'use_customer_culture']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -669,7 +616,7 @@ class OrderApi(object):
                                         files=local_var_files,
                                         response_type='file',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

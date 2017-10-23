@@ -20,7 +20,6 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
-from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -32,35 +31,27 @@ class ClientApi(object):
     """
 
     def __init__(self, api_client=None):
-        config = Configuration()
-        if api_client:
-            self.api_client = api_client
-        else:
-            if not config.api_client:
-                config.api_client = ApiClient()
-            self.api_client = config.api_client
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
 
     def client_get(self, language, **kwargs):
         """
         Get API Client
         This call generates a Swagger API client and returns it as a ZIP
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.client_get(language, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.client_get(language, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param str language: The programming language (required)
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.client_get_with_http_info(language, **kwargs)
         else:
             (data) = self.client_get_with_http_info(language, **kwargs)
@@ -71,15 +62,11 @@ class ClientApi(object):
         Get API Client
         This call generates a Swagger API client and returns it as a ZIP
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.client_get_with_http_info(language, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.client_get_with_http_info(language, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param str language: The programming language (required)
         :return: file
                  If the method is called asynchronously,
@@ -87,7 +74,7 @@ class ClientApi(object):
         """
 
         all_params = ['language']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -136,7 +123,7 @@ class ClientApi(object):
                                         files=local_var_files,
                                         response_type='file',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

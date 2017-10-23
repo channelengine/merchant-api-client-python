@@ -24,12 +24,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CancellationApi()
+api_instance = swagger_client.CancellationApi(swagger_client.ApiClient(configuration))
 cancellation = swagger_client.MerchantCancellationRequest() # MerchantCancellationRequest | 
 
 try: 
@@ -77,12 +78,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CancellationApi()
+api_instance = swagger_client.CancellationApi(swagger_client.ApiClient(configuration))
 created_since = '2013-10-20T19:20:30+01:00' # datetime | 
 
 try: 

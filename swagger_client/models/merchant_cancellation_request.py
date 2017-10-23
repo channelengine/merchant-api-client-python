@@ -53,6 +53,7 @@ class MerchantCancellationRequest(object):
         self._merchant_order_no = None
         self._lines = None
         self._reason = None
+        self.discriminator = None
 
         self.merchant_cancellation_no = merchant_cancellation_no
         self.merchant_order_no = merchant_order_no

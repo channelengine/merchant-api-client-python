@@ -59,6 +59,7 @@ class MerchantShipmentRequest(object):
         self._track_trace_no = None
         self._track_trace_url = None
         self._method = None
+        self.discriminator = None
 
         self.merchant_shipment_no = merchant_shipment_no
         self.merchant_order_no = merchant_order_no

@@ -18,19 +18,20 @@ For merchants.    Mark (part of) an order as shipped.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ShipmentApi()
+api_instance = swagger_client.ShipmentApi(swagger_client.ApiClient(configuration))
 model = swagger_client.MerchantShipmentRequest() # MerchantShipmentRequest | 
 
 try: 
@@ -71,19 +72,20 @@ For channels.    Gets all shipments created since the supplied date.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ShipmentApi()
+api_instance = swagger_client.ShipmentApi(swagger_client.ApiClient(configuration))
 created_since = '2013-10-20T19:20:30+01:00' # datetime | 
 
 try: 
@@ -124,19 +126,20 @@ For merchants.    Update an existing shipment with tracking information
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-swagger_client.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ShipmentApi()
+api_instance = swagger_client.ShipmentApi(swagger_client.ApiClient(configuration))
 merchant_shipment_no = 'merchant_shipment_no_example' # str | The merchant's shipment reference
 model = swagger_client.MerchantShipmentTrackingRequest() # MerchantShipmentTrackingRequest | The updated tracking information
 

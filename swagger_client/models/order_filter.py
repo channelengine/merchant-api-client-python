@@ -56,6 +56,7 @@ class OrderFilter(object):
         self._exclude_marketplace_fulfilled_orders_and_lines = None
         self._fulfillment_type = None
         self._page = None
+        self.discriminator = None
 
         if statuses is not None:
           self.statuses = statuses

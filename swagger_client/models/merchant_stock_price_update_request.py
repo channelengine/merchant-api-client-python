@@ -50,6 +50,7 @@ class MerchantStockPriceUpdateRequest(object):
         self._merchant_product_no = None
         self._stock = None
         self._price = None
+        self.discriminator = None
 
         self.merchant_product_no = merchant_product_no
         if stock is not None:

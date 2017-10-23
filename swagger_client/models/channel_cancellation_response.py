@@ -50,6 +50,7 @@ class ChannelCancellationResponse(object):
         self._channel_order_no = None
         self._lines = None
         self._reason = None
+        self.discriminator = None
 
         self.channel_order_no = channel_order_no
         self.lines = lines

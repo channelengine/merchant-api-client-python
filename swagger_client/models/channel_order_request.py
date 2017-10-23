@@ -83,6 +83,7 @@ class ChannelOrderRequest(object):
         self._billing_address = None
         self._shipping_address = None
         self._extra_data = None
+        self.discriminator = None
 
         self.channel_order_no = channel_order_no
         self.lines = lines

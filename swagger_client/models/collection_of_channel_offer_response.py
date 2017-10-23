@@ -65,6 +65,7 @@ class CollectionOfChannelOfferResponse(object):
         self._success = None
         self._message = None
         self._validation_errors = None
+        self.discriminator = None
 
         if content is not None:
           self.content = content

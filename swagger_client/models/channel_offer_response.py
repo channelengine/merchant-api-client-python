@@ -50,6 +50,7 @@ class ChannelOfferResponse(object):
         self._channel_product_no = None
         self._price = None
         self._stock = None
+        self.discriminator = None
 
         if channel_product_no is not None:
           self.channel_product_no = channel_product_no

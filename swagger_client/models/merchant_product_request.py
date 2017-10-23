@@ -101,6 +101,7 @@ class MerchantProductRequest(object):
         self._image_url = None
         self._category_trail = None
         self._extra_data = None
+        self.discriminator = None
 
         if merchant_product_no is not None:
           self.merchant_product_no = merchant_product_no

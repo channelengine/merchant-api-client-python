@@ -68,6 +68,7 @@ class MerchantOrderLineResponse(object):
         self._fee_fixed = None
         self._fee_rate = None
         self._condition = None
+        self.discriminator = None
 
         if status is not None:
           self.status = status

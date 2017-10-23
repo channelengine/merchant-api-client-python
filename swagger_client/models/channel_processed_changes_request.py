@@ -50,6 +50,7 @@ class ChannelProcessedChangesRequest(object):
         self._created = None
         self._updated = None
         self._removed = None
+        self.discriminator = None
 
         if created is not None:
           self.created = created

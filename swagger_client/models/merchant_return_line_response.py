@@ -47,6 +47,7 @@ class MerchantReturnLineResponse(object):
 
         self._merchant_product_no = None
         self._quantity = None
+        self.discriminator = None
 
         if merchant_product_no is not None:
           self.merchant_product_no = merchant_product_no

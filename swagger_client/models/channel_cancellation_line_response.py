@@ -47,6 +47,7 @@ class ChannelCancellationLineResponse(object):
 
         self._channel_product_no = None
         self._quantity = None
+        self.discriminator = None
 
         self.channel_product_no = channel_product_no
         self.quantity = quantity
