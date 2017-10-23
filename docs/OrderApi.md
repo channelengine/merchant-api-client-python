@@ -1,4 +1,4 @@
-# swagger_client.OrderApi
+# channelengine_api_client.OrderApi
 
 All URIs are relative to *http://dev.channelengine.local/api*
 
@@ -23,19 +23,19 @@ For merchants.    Acknowledge an order. By acknowledging the order the merchant 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
-model = swagger_client.OrderAcknowledgement() # OrderAcknowledgement | Relations between the id's returned by ChannelEngine and the references which the merchant uses
+api_instance = channelengine_api_client.OrderApi(channelengine_api_client.ApiClient(configuration))
+model = channelengine_api_client.OrderAcknowledgement() # OrderAcknowledgement | Relations between the id's returned by ChannelEngine and the references which the merchant uses
 
 try: 
     # Merchant: Acknowledge Order
@@ -77,19 +77,19 @@ For channels.    Create a new order in ChannelEngine.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
-model = swagger_client.ChannelOrderRequest() # ChannelOrderRequest | 
+api_instance = channelengine_api_client.OrderApi(channelengine_api_client.ApiClient(configuration))
+model = channelengine_api_client.ChannelOrderRequest() # ChannelOrderRequest | 
 
 try: 
     # Channel: Create Order
@@ -131,18 +131,18 @@ For merchants.                Fetch orders based on the provided OrderFilter
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.OrderApi(channelengine_api_client.ApiClient(configuration))
 filter_statuses = ['filter_statuses_example'] # list[str] |  (optional)
 filter_merchant_order_nos = ['filter_merchant_order_nos_example'] # list[str] |  (optional)
 filter_exclude_marketplace_fulfilled_orders_and_lines = true # bool |  (optional)
@@ -193,18 +193,18 @@ For merchants.                Fetch newly placed orders (order with status NEW).
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.OrderApi(channelengine_api_client.ApiClient(configuration))
 
 try: 
     # Merchant: Get New Orders
@@ -243,18 +243,18 @@ For merchants.    Generates the ChannelEngine VAT invoice for this order in PDF
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.OrderApi(channelengine_api_client.ApiClient(configuration))
 merchant_order_no = 'merchant_order_no_example' # str | The unique order reference as used by the merchant
 use_customer_culture = true # bool | Generate the invoice in the billing address' country's language (optional)
 
@@ -299,18 +299,18 @@ For merchants.    Generates the ChannelEngine packing slip for this order in PDF
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OrderApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.OrderApi(channelengine_api_client.ApiClient(configuration))
 merchant_order_no = 'merchant_order_no_example' # str | The unique order reference as used by the merchant
 use_customer_culture = true # bool | Generate the invoice in the billing address' country's language (optional)
 

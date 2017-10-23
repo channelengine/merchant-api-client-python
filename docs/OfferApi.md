@@ -1,4 +1,4 @@
-# swagger_client.OfferApi
+# channelengine_api_client.OfferApi
 
 All URIs are relative to *http://dev.channelengine.local/api*
 
@@ -16,19 +16,19 @@ Update stock or price.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.OfferApi(swagger_client.ApiClient(configuration))
-updates = [swagger_client.MerchantStockPriceUpdateRequest()] # list[MerchantStockPriceUpdateRequest] | References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both.
+api_instance = channelengine_api_client.OfferApi(channelengine_api_client.ApiClient(configuration))
+updates = [channelengine_api_client.MerchantStockPriceUpdateRequest()] # list[MerchantStockPriceUpdateRequest] | References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both.
 
 try: 
     # Update stock or price.

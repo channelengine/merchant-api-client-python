@@ -1,4 +1,4 @@
-# swagger_client.CancellationApi
+# channelengine_api_client.CancellationApi
 
 All URIs are relative to *http://dev.channelengine.local/api*
 
@@ -19,19 +19,19 @@ For merchants.    Mark (part of) an order as cancelled.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CancellationApi(swagger_client.ApiClient(configuration))
-cancellation = swagger_client.MerchantCancellationRequest() # MerchantCancellationRequest | 
+api_instance = channelengine_api_client.CancellationApi(channelengine_api_client.ApiClient(configuration))
+cancellation = channelengine_api_client.MerchantCancellationRequest() # MerchantCancellationRequest | 
 
 try: 
     # Merchant: Create Cancellation
@@ -73,18 +73,18 @@ For channels.    Gets all cancellations created since the supplied date.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.CancellationApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.CancellationApi(channelengine_api_client.ApiClient(configuration))
 created_since = '2013-10-20T19:20:30+01:00' # datetime | 
 
 try: 

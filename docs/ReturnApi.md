@@ -1,4 +1,4 @@
-# swagger_client.ReturnApi
+# channelengine_api_client.ReturnApi
 
 All URIs are relative to *http://dev.channelengine.local/api*
 
@@ -21,19 +21,19 @@ For channels.                Mark (part of) an order as returned by the customer
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ReturnApi(swagger_client.ApiClient(configuration))
-model = swagger_client.ChannelReturnRequest() # ChannelReturnRequest | 
+api_instance = channelengine_api_client.ReturnApi(channelengine_api_client.ApiClient(configuration))
+model = channelengine_api_client.ChannelReturnRequest() # ChannelReturnRequest | 
 
 try: 
     # Channel: Create Return
@@ -75,19 +75,19 @@ For merchants.    Mark (part of) an order as returned by the customer.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ReturnApi(swagger_client.ApiClient(configuration))
-model = swagger_client.MerchantReturnRequest() # MerchantReturnRequest | 
+api_instance = channelengine_api_client.ReturnApi(channelengine_api_client.ApiClient(configuration))
+model = channelengine_api_client.MerchantReturnRequest() # MerchantReturnRequest | 
 
 try: 
     # Merchant: Create Return
@@ -129,18 +129,18 @@ For merchants.    Get all returns created by the channel. This call is supposed 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ReturnApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.ReturnApi(channelengine_api_client.ApiClient(configuration))
 created_since = '2013-10-20T19:20:30+01:00' # datetime | 
 
 try: 
@@ -183,18 +183,18 @@ For channels.                Get all returns created by the merchant. This call 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ReturnApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.ReturnApi(channelengine_api_client.ApiClient(configuration))
 created_since = '2013-10-20T19:20:30+01:00' # datetime | 
 
 try: 

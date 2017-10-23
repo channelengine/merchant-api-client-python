@@ -1,4 +1,4 @@
-# swagger_client.ProductApi
+# channelengine_api_client.ProductApi
 
 All URIs are relative to *http://dev.channelengine.local/api*
 
@@ -24,19 +24,19 @@ For channels.                This endpoint should be called after a call to GET 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
-changes = swagger_client.ChannelProcessedChangesRequest() # ChannelProcessedChangesRequest | The merchant references of the products which have been                successfully created, updated or deleted (after a call to 'GetDataChanges')
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
+changes = channelengine_api_client.ChannelProcessedChangesRequest() # ChannelProcessedChangesRequest | The merchant references of the products which have been                successfully created, updated or deleted (after a call to 'GetDataChanges')
 
 try: 
     # Channel: Acknowledge Product Data Changes
@@ -78,19 +78,19 @@ For channels.                After a call to GET 'v2/products/offers' this endpo
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
-changes = [swagger_client.list[str]()] # list[str] | The channel references of the updated products
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
+changes = [channelengine_api_client.list[str]()] # list[str] | The channel references of the updated products
 
 try: 
     # Channel: Acknowledge Product Offer Changes
@@ -132,19 +132,19 @@ For merchants.    Upsert (update or create) products. The parent serves as the '
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
-products = [swagger_client.MerchantProductRequest()] # list[MerchantProductRequest] | 
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
+products = [channelengine_api_client.MerchantProductRequest()] # list[MerchantProductRequest] | 
 
 try: 
     # Merchant: Upsert Products
@@ -186,18 +186,18 @@ For merchants.    Delete a product based on the merchant reference.  Note that w
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
 merchant_product_no = 'merchant_product_no_example' # str | 
 
 try: 
@@ -240,18 +240,18 @@ For merchants.    Retrieve a product based on the merchant reference.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
 merchant_product_no = 'merchant_product_no_example' # str | 
 
 try: 
@@ -294,18 +294,18 @@ For channels.    Get all products which have changes since the post http call to
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
 max_count = 56 # int | Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. (optional)
 
 try: 
@@ -348,18 +348,18 @@ For channels.                GET 'v2/products/offers' and POST 'v2/products/offe
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import channelengine_api_client
+from channelengine_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-configuration = swagger_client.Configuration()
+configuration = channelengine_api_client.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ProductApi(swagger_client.ApiClient(configuration))
+api_instance = channelengine_api_client.ProductApi(channelengine_api_client.ApiClient(configuration))
 
 try: 
     # Channel: Get Product Offer Changes
