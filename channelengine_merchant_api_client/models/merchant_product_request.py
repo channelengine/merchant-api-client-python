@@ -198,7 +198,7 @@ class MerchantProductRequest(object):
     def merchant_product_no(self):
         """Gets the merchant_product_no of this MerchantProductRequest.  # noqa: E501
 
-        A unique identifier of the product.  # noqa: E501
+        A unique identifier of the product. (sku)  # noqa: E501
 
         :return: The merchant_product_no of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -209,7 +209,7 @@ class MerchantProductRequest(object):
     def merchant_product_no(self, merchant_product_no):
         """Sets the merchant_product_no of this MerchantProductRequest.
 
-        A unique identifier of the product.  # noqa: E501
+        A unique identifier of the product. (sku)  # noqa: E501
 
         :param merchant_product_no: The merchant_product_no of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -244,7 +244,7 @@ class MerchantProductRequest(object):
     def parent_merchant_product_no2(self):
         """Gets the parent_merchant_product_no2 of this MerchantProductRequest.  # noqa: E501
 
-        If this product is a different version of another  product (for example, all fields are the same except  color) and itself is a parent with child products (e.g. of sizes),   then this field should contain the 'MerchantProductNo' of the grandparent. The grandparent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the grandparent is behind the child in the list).    Use this field in case of three level product hierarchy,   e.g. model - color - size.   This is required for channels like Otto.  # noqa: E501
+        If this product is a different version of another  product (for example, all fields are the same except  color) and itself is a parent with child products (e.g. of sizes),   then this field should contain the 'MerchantProductNo' of the grandparent. The grandparent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the grandparent is behind the child in the list).  When you set this field, the ParentMerchantProductNo should be left empty.    Use this field in case of three level product hierarchy,   e.g. model - color - size.   This is required for channels like Otto.  # noqa: E501
 
         :return: The parent_merchant_product_no2 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -255,7 +255,7 @@ class MerchantProductRequest(object):
     def parent_merchant_product_no2(self, parent_merchant_product_no2):
         """Sets the parent_merchant_product_no2 of this MerchantProductRequest.
 
-        If this product is a different version of another  product (for example, all fields are the same except  color) and itself is a parent with child products (e.g. of sizes),   then this field should contain the 'MerchantProductNo' of the grandparent. The grandparent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the grandparent is behind the child in the list).    Use this field in case of three level product hierarchy,   e.g. model - color - size.   This is required for channels like Otto.  # noqa: E501
+        If this product is a different version of another  product (for example, all fields are the same except  color) and itself is a parent with child products (e.g. of sizes),   then this field should contain the 'MerchantProductNo' of the grandparent. The grandparent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the grandparent is behind the child in the list).  When you set this field, the ParentMerchantProductNo should be left empty.    Use this field in case of three level product hierarchy,   e.g. model - color - size.   This is required for channels like Otto.  # noqa: E501
 
         :param parent_merchant_product_no2: The parent_merchant_product_no2 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -267,6 +267,7 @@ class MerchantProductRequest(object):
     def name(self):
         """Gets the name of this MerchantProductRequest.  # noqa: E501
 
+        The name of the product  # noqa: E501
 
         :return: The name of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -277,6 +278,7 @@ class MerchantProductRequest(object):
     def name(self, name):
         """Sets the name of this MerchantProductRequest.
 
+        The name of the product  # noqa: E501
 
         :param name: The name of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -288,6 +290,7 @@ class MerchantProductRequest(object):
     def description(self):
         """Gets the description of this MerchantProductRequest.  # noqa: E501
 
+        A description of the product  # noqa: E501
 
         :return: The description of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -298,6 +301,7 @@ class MerchantProductRequest(object):
     def description(self, description):
         """Sets the description of this MerchantProductRequest.
 
+        A description of the product  # noqa: E501
 
         :param description: The description of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -309,6 +313,7 @@ class MerchantProductRequest(object):
     def brand(self):
         """Gets the brand of this MerchantProductRequest.  # noqa: E501
 
+        The brand of the product  # noqa: E501
 
         :return: The brand of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -319,6 +324,7 @@ class MerchantProductRequest(object):
     def brand(self, brand):
         """Sets the brand of this MerchantProductRequest.
 
+        The brand of the product  # noqa: E501
 
         :param brand: The brand of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -330,6 +336,7 @@ class MerchantProductRequest(object):
     def size(self):
         """Gets the size of this MerchantProductRequest.  # noqa: E501
 
+        Optional. The size of the product (variant). E.g. fashion size (S-XL, 46-56, etc), width of the watch, etc..  # noqa: E501
 
         :return: The size of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -340,6 +347,7 @@ class MerchantProductRequest(object):
     def size(self, size):
         """Sets the size of this MerchantProductRequest.
 
+        Optional. The size of the product (variant). E.g. fashion size (S-XL, 46-56, etc), width of the watch, etc..  # noqa: E501
 
         :param size: The size of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -351,6 +359,7 @@ class MerchantProductRequest(object):
     def color(self):
         """Gets the color of this MerchantProductRequest.  # noqa: E501
 
+        Optional. The color of the product (variant).  # noqa: E501
 
         :return: The color of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -361,6 +370,7 @@ class MerchantProductRequest(object):
     def color(self, color):
         """Sets the color of this MerchantProductRequest.
 
+        Optional. The color of the product (variant).  # noqa: E501
 
         :param color: The color of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -372,6 +382,7 @@ class MerchantProductRequest(object):
     def ean(self):
         """Gets the ean of this MerchantProductRequest.  # noqa: E501
 
+        The EAN of GTIN of the product  # noqa: E501
 
         :return: The ean of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -382,6 +393,7 @@ class MerchantProductRequest(object):
     def ean(self, ean):
         """Sets the ean of this MerchantProductRequest.
 
+        The EAN of GTIN of the product  # noqa: E501
 
         :param ean: The ean of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -393,6 +405,7 @@ class MerchantProductRequest(object):
     def manufacturer_product_number(self):
         """Gets the manufacturer_product_number of this MerchantProductRequest.  # noqa: E501
 
+        The unique product reference used by the manufacturer/vendor of the product  # noqa: E501
 
         :return: The manufacturer_product_number of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -403,6 +416,7 @@ class MerchantProductRequest(object):
     def manufacturer_product_number(self, manufacturer_product_number):
         """Sets the manufacturer_product_number of this MerchantProductRequest.
 
+        The unique product reference used by the manufacturer/vendor of the product  # noqa: E501
 
         :param manufacturer_product_number: The manufacturer_product_number of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -414,6 +428,7 @@ class MerchantProductRequest(object):
     def stock(self):
         """Gets the stock of this MerchantProductRequest.  # noqa: E501
 
+        The number of items in stock  # noqa: E501
 
         :return: The stock of this MerchantProductRequest.  # noqa: E501
         :rtype: int
@@ -424,6 +439,7 @@ class MerchantProductRequest(object):
     def stock(self, stock):
         """Sets the stock of this MerchantProductRequest.
 
+        The number of items in stock  # noqa: E501
 
         :param stock: The stock of this MerchantProductRequest.  # noqa: E501
         :type: int
@@ -481,6 +497,7 @@ class MerchantProductRequest(object):
     def purchase_price(self):
         """Gets the purchase_price of this MerchantProductRequest.  # noqa: E501
 
+        Optional. The purchase price of the product. Useful for repricing.  # noqa: E501
 
         :return: The purchase_price of this MerchantProductRequest.  # noqa: E501
         :rtype: float
@@ -491,6 +508,7 @@ class MerchantProductRequest(object):
     def purchase_price(self, purchase_price):
         """Sets the purchase_price of this MerchantProductRequest.
 
+        Optional. The purchase price of the product. Useful for repricing.  # noqa: E501
 
         :param purchase_price: The purchase_price of this MerchantProductRequest.  # noqa: E501
         :type: float
@@ -531,6 +549,7 @@ class MerchantProductRequest(object):
     def shipping_cost(self):
         """Gets the shipping_cost of this MerchantProductRequest.  # noqa: E501
 
+        Shipping cost of the product.  # noqa: E501
 
         :return: The shipping_cost of this MerchantProductRequest.  # noqa: E501
         :rtype: float
@@ -541,6 +560,7 @@ class MerchantProductRequest(object):
     def shipping_cost(self, shipping_cost):
         """Sets the shipping_cost of this MerchantProductRequest.
 
+        Shipping cost of the product.  # noqa: E501
 
         :param shipping_cost: The shipping_cost of this MerchantProductRequest.  # noqa: E501
         :type: float
@@ -621,6 +641,7 @@ class MerchantProductRequest(object):
     def extra_image_url1(self):
         """Gets the extra_image_url1 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (1)  # noqa: E501
 
         :return: The extra_image_url1 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -631,6 +652,7 @@ class MerchantProductRequest(object):
     def extra_image_url1(self, extra_image_url1):
         """Sets the extra_image_url1 of this MerchantProductRequest.
 
+        Url to an additional image of product (1)  # noqa: E501
 
         :param extra_image_url1: The extra_image_url1 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -642,6 +664,7 @@ class MerchantProductRequest(object):
     def extra_image_url2(self):
         """Gets the extra_image_url2 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (2)  # noqa: E501
 
         :return: The extra_image_url2 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -652,6 +675,7 @@ class MerchantProductRequest(object):
     def extra_image_url2(self, extra_image_url2):
         """Sets the extra_image_url2 of this MerchantProductRequest.
 
+        Url to an additional image of product (2)  # noqa: E501
 
         :param extra_image_url2: The extra_image_url2 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -663,6 +687,7 @@ class MerchantProductRequest(object):
     def extra_image_url3(self):
         """Gets the extra_image_url3 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (3)  # noqa: E501
 
         :return: The extra_image_url3 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -673,6 +698,7 @@ class MerchantProductRequest(object):
     def extra_image_url3(self, extra_image_url3):
         """Sets the extra_image_url3 of this MerchantProductRequest.
 
+        Url to an additional image of product (3)  # noqa: E501
 
         :param extra_image_url3: The extra_image_url3 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -684,6 +710,7 @@ class MerchantProductRequest(object):
     def extra_image_url4(self):
         """Gets the extra_image_url4 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (4)  # noqa: E501
 
         :return: The extra_image_url4 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -694,6 +721,7 @@ class MerchantProductRequest(object):
     def extra_image_url4(self, extra_image_url4):
         """Sets the extra_image_url4 of this MerchantProductRequest.
 
+        Url to an additional image of product (4)  # noqa: E501
 
         :param extra_image_url4: The extra_image_url4 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -705,6 +733,7 @@ class MerchantProductRequest(object):
     def extra_image_url5(self):
         """Gets the extra_image_url5 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (5)  # noqa: E501
 
         :return: The extra_image_url5 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -715,6 +744,7 @@ class MerchantProductRequest(object):
     def extra_image_url5(self, extra_image_url5):
         """Sets the extra_image_url5 of this MerchantProductRequest.
 
+        Url to an additional image of product (5)  # noqa: E501
 
         :param extra_image_url5: The extra_image_url5 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -726,6 +756,7 @@ class MerchantProductRequest(object):
     def extra_image_url6(self):
         """Gets the extra_image_url6 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (6)  # noqa: E501
 
         :return: The extra_image_url6 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -736,6 +767,7 @@ class MerchantProductRequest(object):
     def extra_image_url6(self, extra_image_url6):
         """Sets the extra_image_url6 of this MerchantProductRequest.
 
+        Url to an additional image of product (6)  # noqa: E501
 
         :param extra_image_url6: The extra_image_url6 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -747,6 +779,7 @@ class MerchantProductRequest(object):
     def extra_image_url7(self):
         """Gets the extra_image_url7 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (7)  # noqa: E501
 
         :return: The extra_image_url7 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -757,6 +790,7 @@ class MerchantProductRequest(object):
     def extra_image_url7(self, extra_image_url7):
         """Sets the extra_image_url7 of this MerchantProductRequest.
 
+        Url to an additional image of product (7)  # noqa: E501
 
         :param extra_image_url7: The extra_image_url7 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -768,6 +802,7 @@ class MerchantProductRequest(object):
     def extra_image_url8(self):
         """Gets the extra_image_url8 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (8)  # noqa: E501
 
         :return: The extra_image_url8 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -778,6 +813,7 @@ class MerchantProductRequest(object):
     def extra_image_url8(self, extra_image_url8):
         """Sets the extra_image_url8 of this MerchantProductRequest.
 
+        Url to an additional image of product (8)  # noqa: E501
 
         :param extra_image_url8: The extra_image_url8 of this MerchantProductRequest.  # noqa: E501
         :type: str
@@ -789,6 +825,7 @@ class MerchantProductRequest(object):
     def extra_image_url9(self):
         """Gets the extra_image_url9 of this MerchantProductRequest.  # noqa: E501
 
+        Url to an additional image of product (9)  # noqa: E501
 
         :return: The extra_image_url9 of this MerchantProductRequest.  # noqa: E501
         :rtype: str
@@ -799,6 +836,7 @@ class MerchantProductRequest(object):
     def extra_image_url9(self, extra_image_url9):
         """Sets the extra_image_url9 of this MerchantProductRequest.
 
+        Url to an additional image of product (9)  # noqa: E501
 
         :param extra_image_url9: The extra_image_url9 of this MerchantProductRequest.  # noqa: E501
         :type: str

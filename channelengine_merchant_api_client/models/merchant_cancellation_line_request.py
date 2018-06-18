@@ -54,6 +54,7 @@ class MerchantCancellationLineRequest(object):
     def merchant_product_no(self):
         """Gets the merchant_product_no of this MerchantCancellationLineRequest.  # noqa: E501
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :return: The merchant_product_no of this MerchantCancellationLineRequest.  # noqa: E501
         :rtype: str
@@ -64,6 +65,7 @@ class MerchantCancellationLineRequest(object):
     def merchant_product_no(self, merchant_product_no):
         """Sets the merchant_product_no of this MerchantCancellationLineRequest.
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :param merchant_product_no: The merchant_product_no of this MerchantCancellationLineRequest.  # noqa: E501
         :type: str
@@ -77,6 +79,7 @@ class MerchantCancellationLineRequest(object):
     def quantity(self):
         """Gets the quantity of this MerchantCancellationLineRequest.  # noqa: E501
 
+        Quantity of the product to cancel  # noqa: E501
 
         :return: The quantity of this MerchantCancellationLineRequest.  # noqa: E501
         :rtype: int
@@ -87,6 +90,7 @@ class MerchantCancellationLineRequest(object):
     def quantity(self, quantity):
         """Sets the quantity of this MerchantCancellationLineRequest.
 
+        Quantity of the product to cancel  # noqa: E501
 
         :param quantity: The quantity of this MerchantCancellationLineRequest.  # noqa: E501
         :type: int

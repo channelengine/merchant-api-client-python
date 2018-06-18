@@ -70,6 +70,7 @@ class MerchantCancellationRequest(object):
     def merchant_cancellation_no(self):
         """Gets the merchant_cancellation_no of this MerchantCancellationRequest.  # noqa: E501
 
+        The unique cancellation reference used by the Merchant (sku)  # noqa: E501
 
         :return: The merchant_cancellation_no of this MerchantCancellationRequest.  # noqa: E501
         :rtype: str
@@ -80,6 +81,7 @@ class MerchantCancellationRequest(object):
     def merchant_cancellation_no(self, merchant_cancellation_no):
         """Sets the merchant_cancellation_no of this MerchantCancellationRequest.
 
+        The unique cancellation reference used by the Merchant (sku)  # noqa: E501
 
         :param merchant_cancellation_no: The merchant_cancellation_no of this MerchantCancellationRequest.  # noqa: E501
         :type: str
@@ -93,6 +95,7 @@ class MerchantCancellationRequest(object):
     def merchant_order_no(self):
         """Gets the merchant_order_no of this MerchantCancellationRequest.  # noqa: E501
 
+        The unique order reference used by the Merchant (sku)  # noqa: E501
 
         :return: The merchant_order_no of this MerchantCancellationRequest.  # noqa: E501
         :rtype: str
@@ -103,6 +106,7 @@ class MerchantCancellationRequest(object):
     def merchant_order_no(self, merchant_order_no):
         """Sets the merchant_order_no of this MerchantCancellationRequest.
 
+        The unique order reference used by the Merchant (sku)  # noqa: E501
 
         :param merchant_order_no: The merchant_order_no of this MerchantCancellationRequest.  # noqa: E501
         :type: str
@@ -139,6 +143,7 @@ class MerchantCancellationRequest(object):
     def reason(self):
         """Gets the reason of this MerchantCancellationRequest.  # noqa: E501
 
+        Reason for cancellation (text)  # noqa: E501
 
         :return: The reason of this MerchantCancellationRequest.  # noqa: E501
         :rtype: str
@@ -149,6 +154,7 @@ class MerchantCancellationRequest(object):
     def reason(self, reason):
         """Sets the reason of this MerchantCancellationRequest.
 
+        Reason for cancellation (text)  # noqa: E501
 
         :param reason: The reason of this MerchantCancellationRequest.  # noqa: E501
         :type: str
@@ -160,6 +166,7 @@ class MerchantCancellationRequest(object):
     def reason_code(self):
         """Gets the reason_code of this MerchantCancellationRequest.  # noqa: E501
 
+        Reason code for cancellation  # noqa: E501
 
         :return: The reason_code of this MerchantCancellationRequest.  # noqa: E501
         :rtype: str
@@ -170,6 +177,7 @@ class MerchantCancellationRequest(object):
     def reason_code(self, reason_code):
         """Sets the reason_code of this MerchantCancellationRequest.
 
+        Reason code for cancellation  # noqa: E501
 
         :param reason_code: The reason_code of this MerchantCancellationRequest.  # noqa: E501
         :type: str

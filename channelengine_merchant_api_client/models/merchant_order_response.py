@@ -210,6 +210,7 @@ class MerchantOrderResponse(object):
     def channel_name(self):
         """Gets the channel_name of this MerchantOrderResponse.  # noqa: E501
 
+        The name of the channel  # noqa: E501
 
         :return: The channel_name of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -220,6 +221,7 @@ class MerchantOrderResponse(object):
     def channel_name(self, channel_name):
         """Sets the channel_name of this MerchantOrderResponse.
 
+        The name of the channel  # noqa: E501
 
         :param channel_name: The channel_name of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -231,6 +233,7 @@ class MerchantOrderResponse(object):
     def channel_order_support(self):
         """Gets the channel_order_support of this MerchantOrderResponse.  # noqa: E501
 
+        The type of orders the channel support.  # noqa: E501
 
         :return: The channel_order_support of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -241,6 +244,7 @@ class MerchantOrderResponse(object):
     def channel_order_support(self, channel_order_support):
         """Sets the channel_order_support of this MerchantOrderResponse.
 
+        The type of orders the channel support.  # noqa: E501
 
         :param channel_order_support: The channel_order_support of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -258,6 +262,7 @@ class MerchantOrderResponse(object):
     def channel_order_no(self):
         """Gets the channel_order_no of this MerchantOrderResponse.  # noqa: E501
 
+        The unique order reference used by the channel  # noqa: E501
 
         :return: The channel_order_no of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -268,6 +273,7 @@ class MerchantOrderResponse(object):
     def channel_order_no(self, channel_order_no):
         """Sets the channel_order_no of this MerchantOrderResponse.
 
+        The unique order reference used by the channel  # noqa: E501
 
         :param channel_order_no: The channel_order_no of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -279,6 +285,7 @@ class MerchantOrderResponse(object):
     def status(self):
         """Gets the status of this MerchantOrderResponse.  # noqa: E501
 
+        The status of the order  # noqa: E501
 
         :return: The status of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -289,6 +296,7 @@ class MerchantOrderResponse(object):
     def status(self, status):
         """Sets the status of this MerchantOrderResponse.
 
+        The status of the order  # noqa: E501
 
         :param status: The status of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -580,6 +588,7 @@ class MerchantOrderResponse(object):
     def phone(self):
         """Gets the phone of this MerchantOrderResponse.  # noqa: E501
 
+        The customer's telephone number  # noqa: E501
 
         :return: The phone of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -590,6 +599,7 @@ class MerchantOrderResponse(object):
     def phone(self, phone):
         """Sets the phone of this MerchantOrderResponse.
 
+        The customer's telephone number  # noqa: E501
 
         :param phone: The phone of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -605,6 +615,7 @@ class MerchantOrderResponse(object):
     def email(self):
         """Gets the email of this MerchantOrderResponse.  # noqa: E501
 
+        The customer's email  # noqa: E501
 
         :return: The email of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -615,6 +626,7 @@ class MerchantOrderResponse(object):
     def email(self, email):
         """Sets the email of this MerchantOrderResponse.
 
+        The customer's email  # noqa: E501
 
         :param email: The email of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -686,6 +698,7 @@ class MerchantOrderResponse(object):
     def payment_method(self):
         """Gets the payment_method of this MerchantOrderResponse.  # noqa: E501
 
+        The payment method used on the order  # noqa: E501
 
         :return: The payment_method of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -696,6 +709,7 @@ class MerchantOrderResponse(object):
     def payment_method(self, payment_method):
         """Sets the payment_method of this MerchantOrderResponse.
 
+        The payment method used on the order  # noqa: E501
 
         :param payment_method: The payment_method of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -738,6 +752,7 @@ class MerchantOrderResponse(object):
     def currency_code(self):
         """Gets the currency_code of this MerchantOrderResponse.  # noqa: E501
 
+        The currency code for the amounts of the order  # noqa: E501
 
         :return: The currency_code of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -748,6 +763,7 @@ class MerchantOrderResponse(object):
     def currency_code(self, currency_code):
         """Sets the currency_code of this MerchantOrderResponse.
 
+        The currency code for the amounts of the order  # noqa: E501
 
         :param currency_code: The currency_code of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -761,6 +777,7 @@ class MerchantOrderResponse(object):
     def order_date(self):
         """Gets the order_date of this MerchantOrderResponse.  # noqa: E501
 
+        The date the order was done  # noqa: E501
 
         :return: The order_date of this MerchantOrderResponse.  # noqa: E501
         :rtype: datetime
@@ -771,6 +788,7 @@ class MerchantOrderResponse(object):
     def order_date(self, order_date):
         """Sets the order_date of this MerchantOrderResponse.
 
+        The date the order was done  # noqa: E501
 
         :param order_date: The order_date of this MerchantOrderResponse.  # noqa: E501
         :type: datetime
@@ -784,6 +802,7 @@ class MerchantOrderResponse(object):
     def channel_customer_no(self):
         """Gets the channel_customer_no of this MerchantOrderResponse.  # noqa: E501
 
+        The unique customer reference used by the channel  # noqa: E501
 
         :return: The channel_customer_no of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -794,6 +813,7 @@ class MerchantOrderResponse(object):
     def channel_customer_no(self, channel_customer_no):
         """Sets the channel_customer_no of this MerchantOrderResponse.
 
+        The unique customer reference used by the channel  # noqa: E501
 
         :param channel_customer_no: The channel_customer_no of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -809,6 +829,7 @@ class MerchantOrderResponse(object):
     def billing_address(self):
         """Gets the billing_address of this MerchantOrderResponse.  # noqa: E501
 
+        The billing or invoice address  # noqa: E501
 
         :return: The billing_address of this MerchantOrderResponse.  # noqa: E501
         :rtype: Address
@@ -819,6 +840,7 @@ class MerchantOrderResponse(object):
     def billing_address(self, billing_address):
         """Sets the billing_address of this MerchantOrderResponse.
 
+        The billing or invoice address  # noqa: E501
 
         :param billing_address: The billing_address of this MerchantOrderResponse.  # noqa: E501
         :type: Address
@@ -832,6 +854,7 @@ class MerchantOrderResponse(object):
     def shipping_address(self):
         """Gets the shipping_address of this MerchantOrderResponse.  # noqa: E501
 
+        The shipping address  # noqa: E501
 
         :return: The shipping_address of this MerchantOrderResponse.  # noqa: E501
         :rtype: Address
@@ -842,6 +865,7 @@ class MerchantOrderResponse(object):
     def shipping_address(self, shipping_address):
         """Sets the shipping_address of this MerchantOrderResponse.
 
+        The shipping address  # noqa: E501
 
         :param shipping_address: The shipping_address of this MerchantOrderResponse.  # noqa: E501
         :type: Address
@@ -855,6 +879,7 @@ class MerchantOrderResponse(object):
     def extra_data(self):
         """Gets the extra_data of this MerchantOrderResponse.  # noqa: E501
 
+        Extra data on the order  # noqa: E501
 
         :return: The extra_data of this MerchantOrderResponse.  # noqa: E501
         :rtype: dict(str, str)
@@ -865,6 +890,7 @@ class MerchantOrderResponse(object):
     def extra_data(self, extra_data):
         """Sets the extra_data of this MerchantOrderResponse.
 
+        Extra data on the order  # noqa: E501
 
         :param extra_data: The extra_data of this MerchantOrderResponse.  # noqa: E501
         :type: dict(str, str)

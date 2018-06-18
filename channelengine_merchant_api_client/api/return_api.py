@@ -226,3 +226,102 @@ class ReturnApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+    def return_update_for_merchant(self, model, **kwargs):  # noqa: E501
+        """Mark a return as received  # noqa: E501
+
+        Mark a return as received  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.return_update_for_merchant(model, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param MerchantReturnUpdateRequest model:  (required)
+        :return: ApiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.return_update_for_merchant_with_http_info(model, **kwargs)  # noqa: E501
+        else:
+            (data) = self.return_update_for_merchant_with_http_info(model, **kwargs)  # noqa: E501
+            return data
+
+    def return_update_for_merchant_with_http_info(self, model, **kwargs):  # noqa: E501
+        """Mark a return as received  # noqa: E501
+
+        Mark a return as received  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.return_update_for_merchant_with_http_info(model, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param MerchantReturnUpdateRequest model:  (required)
+        :return: ApiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['model']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method return_update_for_merchant" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'model' is set
+        if ('model' not in params or
+                params['model'] is None):
+            raise ValueError("Missing the required parameter `model` when calling `return_update_for_merchant`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'model' in params:
+            body_params = params['model']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v2/returns', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ApiResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)

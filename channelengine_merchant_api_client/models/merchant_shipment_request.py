@@ -75,6 +75,7 @@ class MerchantShipmentRequest(object):
     def merchant_shipment_no(self):
         """Gets the merchant_shipment_no of this MerchantShipmentRequest.  # noqa: E501
 
+        The unique shipment reference used by the Merchant  # noqa: E501
 
         :return: The merchant_shipment_no of this MerchantShipmentRequest.  # noqa: E501
         :rtype: str
@@ -85,6 +86,7 @@ class MerchantShipmentRequest(object):
     def merchant_shipment_no(self, merchant_shipment_no):
         """Sets the merchant_shipment_no of this MerchantShipmentRequest.
 
+        The unique shipment reference used by the Merchant  # noqa: E501
 
         :param merchant_shipment_no: The merchant_shipment_no of this MerchantShipmentRequest.  # noqa: E501
         :type: str
@@ -98,6 +100,7 @@ class MerchantShipmentRequest(object):
     def merchant_order_no(self):
         """Gets the merchant_order_no of this MerchantShipmentRequest.  # noqa: E501
 
+        The unique order reference used by the Merchant  # noqa: E501
 
         :return: The merchant_order_no of this MerchantShipmentRequest.  # noqa: E501
         :rtype: str
@@ -108,6 +111,7 @@ class MerchantShipmentRequest(object):
     def merchant_order_no(self, merchant_order_no):
         """Sets the merchant_order_no of this MerchantShipmentRequest.
 
+        The unique order reference used by the Merchant  # noqa: E501
 
         :param merchant_order_no: The merchant_order_no of this MerchantShipmentRequest.  # noqa: E501
         :type: str
@@ -144,6 +148,7 @@ class MerchantShipmentRequest(object):
     def track_trace_no(self):
         """Gets the track_trace_no of this MerchantShipmentRequest.  # noqa: E501
 
+        The unique shipping reference used by the Shipping carrier (track&amp;trace number)  # noqa: E501
 
         :return: The track_trace_no of this MerchantShipmentRequest.  # noqa: E501
         :rtype: str
@@ -154,6 +159,7 @@ class MerchantShipmentRequest(object):
     def track_trace_no(self, track_trace_no):
         """Sets the track_trace_no of this MerchantShipmentRequest.
 
+        The unique shipping reference used by the Shipping carrier (track&amp;trace number)  # noqa: E501
 
         :param track_trace_no: The track_trace_no of this MerchantShipmentRequest.  # noqa: E501
         :type: str
@@ -169,6 +175,7 @@ class MerchantShipmentRequest(object):
     def track_trace_url(self):
         """Gets the track_trace_url of this MerchantShipmentRequest.  # noqa: E501
 
+        A link to a page of the carrier where the customer can track the shipping of her package.  # noqa: E501
 
         :return: The track_trace_url of this MerchantShipmentRequest.  # noqa: E501
         :rtype: str
@@ -179,6 +186,7 @@ class MerchantShipmentRequest(object):
     def track_trace_url(self, track_trace_url):
         """Sets the track_trace_url of this MerchantShipmentRequest.
 
+        A link to a page of the carrier where the customer can track the shipping of her package.  # noqa: E501
 
         :param track_trace_url: The track_trace_url of this MerchantShipmentRequest.  # noqa: E501
         :type: str
@@ -194,6 +202,7 @@ class MerchantShipmentRequest(object):
     def method(self):
         """Gets the method of this MerchantShipmentRequest.  # noqa: E501
 
+        Shipment method (carrier)  # noqa: E501
 
         :return: The method of this MerchantShipmentRequest.  # noqa: E501
         :rtype: str
@@ -204,6 +213,7 @@ class MerchantShipmentRequest(object):
     def method(self, method):
         """Sets the method of this MerchantShipmentRequest.
 
+        Shipment method (carrier)  # noqa: E501
 
         :param method: The method of this MerchantShipmentRequest.  # noqa: E501
         :type: str

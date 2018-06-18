@@ -106,6 +106,7 @@ class Address(object):
     def gender(self):
         """Gets the gender of this Address.  # noqa: E501
 
+        Optional. The customer's gender  # noqa: E501
 
         :return: The gender of this Address.  # noqa: E501
         :rtype: str
@@ -116,6 +117,7 @@ class Address(object):
     def gender(self, gender):
         """Sets the gender of this Address.
 
+        Optional. The customer's gender  # noqa: E501
 
         :param gender: The gender of this Address.  # noqa: E501
         :type: str
@@ -133,6 +135,7 @@ class Address(object):
     def company_name(self):
         """Gets the company_name of this Address.  # noqa: E501
 
+        Optional. Company addressed too.  # noqa: E501
 
         :return: The company_name of this Address.  # noqa: E501
         :rtype: str
@@ -143,6 +146,7 @@ class Address(object):
     def company_name(self, company_name):
         """Sets the company_name of this Address.
 
+        Optional. Company addressed too.  # noqa: E501
 
         :param company_name: The company_name of this Address.  # noqa: E501
         :type: str
@@ -158,6 +162,7 @@ class Address(object):
     def first_name(self):
         """Gets the first_name of this Address.  # noqa: E501
 
+        The first name of the customer  # noqa: E501
 
         :return: The first_name of this Address.  # noqa: E501
         :rtype: str
@@ -168,6 +173,7 @@ class Address(object):
     def first_name(self, first_name):
         """Sets the first_name of this Address.
 
+        The first name of the customer  # noqa: E501
 
         :param first_name: The first_name of this Address.  # noqa: E501
         :type: str
@@ -183,6 +189,7 @@ class Address(object):
     def last_name(self):
         """Gets the last_name of this Address.  # noqa: E501
 
+        The last name of the customer (includes the surname prefix [tussenvoegsel] like 'de', 'van', 'du')  # noqa: E501
 
         :return: The last_name of this Address.  # noqa: E501
         :rtype: str
@@ -193,6 +200,7 @@ class Address(object):
     def last_name(self, last_name):
         """Sets the last_name of this Address.
 
+        The last name of the customer (includes the surname prefix [tussenvoegsel] like 'de', 'van', 'du')  # noqa: E501
 
         :param last_name: The last_name of this Address.  # noqa: E501
         :type: str
@@ -208,6 +216,7 @@ class Address(object):
     def street_name(self):
         """Gets the street_name of this Address.  # noqa: E501
 
+        The name of the street (without house number information)  # noqa: E501
 
         :return: The street_name of this Address.  # noqa: E501
         :rtype: str
@@ -218,6 +227,7 @@ class Address(object):
     def street_name(self, street_name):
         """Sets the street_name of this Address.
 
+        The name of the street (without house number information)  # noqa: E501
 
         :param street_name: The street_name of this Address.  # noqa: E501
         :type: str
@@ -233,6 +243,7 @@ class Address(object):
     def house_nr(self):
         """Gets the house_nr of this Address.  # noqa: E501
 
+        The house number  # noqa: E501
 
         :return: The house_nr of this Address.  # noqa: E501
         :rtype: str
@@ -243,6 +254,7 @@ class Address(object):
     def house_nr(self, house_nr):
         """Sets the house_nr of this Address.
 
+        The house number  # noqa: E501
 
         :param house_nr: The house_nr of this Address.  # noqa: E501
         :type: str
@@ -258,6 +270,7 @@ class Address(object):
     def house_nr_addition(self):
         """Gets the house_nr_addition of this Address.  # noqa: E501
 
+        Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  # noqa: E501
 
         :return: The house_nr_addition of this Address.  # noqa: E501
         :rtype: str
@@ -268,6 +281,7 @@ class Address(object):
     def house_nr_addition(self, house_nr_addition):
         """Sets the house_nr_addition of this Address.
 
+        Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  # noqa: E501
 
         :param house_nr_addition: The house_nr_addition of this Address.  # noqa: E501
         :type: str
@@ -283,6 +297,7 @@ class Address(object):
     def zip_code(self):
         """Gets the zip_code of this Address.  # noqa: E501
 
+        The zip or postal code  # noqa: E501
 
         :return: The zip_code of this Address.  # noqa: E501
         :rtype: str
@@ -293,6 +308,7 @@ class Address(object):
     def zip_code(self, zip_code):
         """Sets the zip_code of this Address.
 
+        The zip or postal code  # noqa: E501
 
         :param zip_code: The zip_code of this Address.  # noqa: E501
         :type: str
@@ -304,6 +320,7 @@ class Address(object):
     def city(self):
         """Gets the city of this Address.  # noqa: E501
 
+        The name of the city  # noqa: E501
 
         :return: The city of this Address.  # noqa: E501
         :rtype: str
@@ -314,6 +331,7 @@ class Address(object):
     def city(self, city):
         """Sets the city of this Address.
 
+        The name of the city  # noqa: E501
 
         :param city: The city of this Address.  # noqa: E501
         :type: str

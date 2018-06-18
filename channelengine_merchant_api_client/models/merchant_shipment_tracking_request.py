@@ -59,6 +59,7 @@ class MerchantShipmentTrackingRequest(object):
     def method(self):
         """Gets the method of this MerchantShipmentTrackingRequest.  # noqa: E501
 
+        Shipment method (carrier)  # noqa: E501
 
         :return: The method of this MerchantShipmentTrackingRequest.  # noqa: E501
         :rtype: str
@@ -69,6 +70,7 @@ class MerchantShipmentTrackingRequest(object):
     def method(self, method):
         """Sets the method of this MerchantShipmentTrackingRequest.
 
+        Shipment method (carrier)  # noqa: E501
 
         :param method: The method of this MerchantShipmentTrackingRequest.  # noqa: E501
         :type: str
@@ -86,6 +88,7 @@ class MerchantShipmentTrackingRequest(object):
     def track_trace_no(self):
         """Gets the track_trace_no of this MerchantShipmentTrackingRequest.  # noqa: E501
 
+        The unique shipping reference used by the Shipping carrier (track &amp; trace number)  # noqa: E501
 
         :return: The track_trace_no of this MerchantShipmentTrackingRequest.  # noqa: E501
         :rtype: str
@@ -96,6 +99,7 @@ class MerchantShipmentTrackingRequest(object):
     def track_trace_no(self, track_trace_no):
         """Sets the track_trace_no of this MerchantShipmentTrackingRequest.
 
+        The unique shipping reference used by the Shipping carrier (track &amp; trace number)  # noqa: E501
 
         :param track_trace_no: The track_trace_no of this MerchantShipmentTrackingRequest.  # noqa: E501
         :type: str
@@ -113,6 +117,7 @@ class MerchantShipmentTrackingRequest(object):
     def track_trace_url(self):
         """Gets the track_trace_url of this MerchantShipmentTrackingRequest.  # noqa: E501
 
+        A link to a page of the carrier where the customer can track the shipping of her package.  # noqa: E501
 
         :return: The track_trace_url of this MerchantShipmentTrackingRequest.  # noqa: E501
         :rtype: str
@@ -123,6 +128,7 @@ class MerchantShipmentTrackingRequest(object):
     def track_trace_url(self, track_trace_url):
         """Sets the track_trace_url of this MerchantShipmentTrackingRequest.
 
+        A link to a page of the carrier where the customer can track the shipping of her package.  # noqa: E501
 
         :param track_trace_url: The track_trace_url of this MerchantShipmentTrackingRequest.  # noqa: E501
         :type: str

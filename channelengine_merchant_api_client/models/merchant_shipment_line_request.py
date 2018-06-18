@@ -54,6 +54,7 @@ class MerchantShipmentLineRequest(object):
     def merchant_product_no(self):
         """Gets the merchant_product_no of this MerchantShipmentLineRequest.  # noqa: E501
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :return: The merchant_product_no of this MerchantShipmentLineRequest.  # noqa: E501
         :rtype: str
@@ -64,6 +65,7 @@ class MerchantShipmentLineRequest(object):
     def merchant_product_no(self, merchant_product_no):
         """Sets the merchant_product_no of this MerchantShipmentLineRequest.
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :param merchant_product_no: The merchant_product_no of this MerchantShipmentLineRequest.  # noqa: E501
         :type: str
@@ -77,6 +79,7 @@ class MerchantShipmentLineRequest(object):
     def quantity(self):
         """Gets the quantity of this MerchantShipmentLineRequest.  # noqa: E501
 
+        Number of items of the product in the shipment  # noqa: E501
 
         :return: The quantity of this MerchantShipmentLineRequest.  # noqa: E501
         :rtype: int
@@ -87,6 +90,7 @@ class MerchantShipmentLineRequest(object):
     def quantity(self, quantity):
         """Sets the quantity of this MerchantShipmentLineRequest.
 
+        Number of items of the product in the shipment  # noqa: E501
 
         :param quantity: The quantity of this MerchantShipmentLineRequest.  # noqa: E501
         :type: int

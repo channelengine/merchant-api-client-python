@@ -60,6 +60,7 @@ class MerchantStockPriceUpdateRequest(object):
     def merchant_product_no(self):
         """Gets the merchant_product_no of this MerchantStockPriceUpdateRequest.  # noqa: E501
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :return: The merchant_product_no of this MerchantStockPriceUpdateRequest.  # noqa: E501
         :rtype: str
@@ -70,6 +71,7 @@ class MerchantStockPriceUpdateRequest(object):
     def merchant_product_no(self, merchant_product_no):
         """Sets the merchant_product_no of this MerchantStockPriceUpdateRequest.
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :param merchant_product_no: The merchant_product_no of this MerchantStockPriceUpdateRequest.  # noqa: E501
         :type: str
@@ -83,6 +85,7 @@ class MerchantStockPriceUpdateRequest(object):
     def stock(self):
         """Gets the stock of this MerchantStockPriceUpdateRequest.  # noqa: E501
 
+        The stock of the product. Should not be negative  # noqa: E501
 
         :return: The stock of this MerchantStockPriceUpdateRequest.  # noqa: E501
         :rtype: int
@@ -93,6 +96,7 @@ class MerchantStockPriceUpdateRequest(object):
     def stock(self, stock):
         """Sets the stock of this MerchantStockPriceUpdateRequest.
 
+        The stock of the product. Should not be negative  # noqa: E501
 
         :param stock: The stock of this MerchantStockPriceUpdateRequest.  # noqa: E501
         :type: int
@@ -104,6 +108,7 @@ class MerchantStockPriceUpdateRequest(object):
     def price(self):
         """Gets the price of this MerchantStockPriceUpdateRequest.  # noqa: E501
 
+        The price of the product. Should not be negative  # noqa: E501
 
         :return: The price of this MerchantStockPriceUpdateRequest.  # noqa: E501
         :rtype: float
@@ -114,6 +119,7 @@ class MerchantStockPriceUpdateRequest(object):
     def price(self, price):
         """Sets the price of this MerchantStockPriceUpdateRequest.
 
+        The price of the product. Should not be negative  # noqa: E501
 
         :param price: The price of this MerchantStockPriceUpdateRequest.  # noqa: E501
         :type: float

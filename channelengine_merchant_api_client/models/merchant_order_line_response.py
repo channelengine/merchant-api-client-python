@@ -127,6 +127,7 @@ class MerchantOrderLineResponse(object):
     def status(self):
         """Gets the status of this MerchantOrderLineResponse.  # noqa: E501
 
+        The status of the order  # noqa: E501
 
         :return: The status of this MerchantOrderLineResponse.  # noqa: E501
         :rtype: str
@@ -137,6 +138,7 @@ class MerchantOrderLineResponse(object):
     def status(self, status):
         """Sets the status of this MerchantOrderLineResponse.
 
+        The status of the order  # noqa: E501
 
         :param status: The status of this MerchantOrderLineResponse.  # noqa: E501
         :type: str
@@ -154,6 +156,7 @@ class MerchantOrderLineResponse(object):
     def is_fulfillment_by_marketplace(self):
         """Gets the is_fulfillment_by_marketplace of this MerchantOrderLineResponse.  # noqa: E501
 
+        Is the order fulfilled by the marketplace (amazon: FBA, bol: LVB, etc.)?  # noqa: E501
 
         :return: The is_fulfillment_by_marketplace of this MerchantOrderLineResponse.  # noqa: E501
         :rtype: bool
@@ -164,6 +167,7 @@ class MerchantOrderLineResponse(object):
     def is_fulfillment_by_marketplace(self, is_fulfillment_by_marketplace):
         """Sets the is_fulfillment_by_marketplace of this MerchantOrderLineResponse.
 
+        Is the order fulfilled by the marketplace (amazon: FBA, bol: LVB, etc.)?  # noqa: E501
 
         :param is_fulfillment_by_marketplace: The is_fulfillment_by_marketplace of this MerchantOrderLineResponse.  # noqa: E501
         :type: bool
@@ -175,6 +179,7 @@ class MerchantOrderLineResponse(object):
     def merchant_product_no(self):
         """Gets the merchant_product_no of this MerchantOrderLineResponse.  # noqa: E501
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :return: The merchant_product_no of this MerchantOrderLineResponse.  # noqa: E501
         :rtype: str
@@ -185,6 +190,7 @@ class MerchantOrderLineResponse(object):
     def merchant_product_no(self, merchant_product_no):
         """Sets the merchant_product_no of this MerchantOrderLineResponse.
 
+        The unique product reference used by the Merchant (sku)  # noqa: E501
 
         :param merchant_product_no: The merchant_product_no of this MerchantOrderLineResponse.  # noqa: E501
         :type: str
@@ -357,6 +363,7 @@ class MerchantOrderLineResponse(object):
     def channel_product_no(self):
         """Gets the channel_product_no of this MerchantOrderLineResponse.  # noqa: E501
 
+        The unique order reference used by the channel  # noqa: E501
 
         :return: The channel_product_no of this MerchantOrderLineResponse.  # noqa: E501
         :rtype: str
@@ -367,6 +374,7 @@ class MerchantOrderLineResponse(object):
     def channel_product_no(self, channel_product_no):
         """Sets the channel_product_no of this MerchantOrderLineResponse.
 
+        The unique order reference used by the channel  # noqa: E501
 
         :param channel_product_no: The channel_product_no of this MerchantOrderLineResponse.  # noqa: E501
         :type: str
@@ -384,6 +392,7 @@ class MerchantOrderLineResponse(object):
     def quantity(self):
         """Gets the quantity of this MerchantOrderLineResponse.  # noqa: E501
 
+        The number of items of the product  # noqa: E501
 
         :return: The quantity of this MerchantOrderLineResponse.  # noqa: E501
         :rtype: int
@@ -394,6 +403,7 @@ class MerchantOrderLineResponse(object):
     def quantity(self, quantity):
         """Sets the quantity of this MerchantOrderLineResponse.
 
+        The number of items of the product  # noqa: E501
 
         :param quantity: The quantity of this MerchantOrderLineResponse.  # noqa: E501
         :type: int

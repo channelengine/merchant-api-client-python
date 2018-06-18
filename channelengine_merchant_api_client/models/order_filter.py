@@ -71,6 +71,7 @@ class OrderFilter(object):
     def statuses(self):
         """Gets the statuses of this OrderFilter.  # noqa: E501
 
+        Order status(es) to filter on  # noqa: E501
 
         :return: The statuses of this OrderFilter.  # noqa: E501
         :rtype: list[str]
@@ -81,6 +82,7 @@ class OrderFilter(object):
     def statuses(self, statuses):
         """Sets the statuses of this OrderFilter.
 
+        Order status(es) to filter on  # noqa: E501
 
         :param statuses: The statuses of this OrderFilter.  # noqa: E501
         :type: list[str]
@@ -99,6 +101,7 @@ class OrderFilter(object):
     def merchant_order_nos(self):
         """Gets the merchant_order_nos of this OrderFilter.  # noqa: E501
 
+        Filter on unique order reference used by the merchant  # noqa: E501
 
         :return: The merchant_order_nos of this OrderFilter.  # noqa: E501
         :rtype: list[str]
@@ -109,6 +112,7 @@ class OrderFilter(object):
     def merchant_order_nos(self, merchant_order_nos):
         """Sets the merchant_order_nos of this OrderFilter.
 
+        Filter on unique order reference used by the merchant  # noqa: E501
 
         :param merchant_order_nos: The merchant_order_nos of this OrderFilter.  # noqa: E501
         :type: list[str]
@@ -120,6 +124,7 @@ class OrderFilter(object):
     def exclude_marketplace_fulfilled_orders_and_lines(self):
         """Gets the exclude_marketplace_fulfilled_orders_and_lines of this OrderFilter.  # noqa: E501
 
+        Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)  # noqa: E501
 
         :return: The exclude_marketplace_fulfilled_orders_and_lines of this OrderFilter.  # noqa: E501
         :rtype: bool
@@ -130,6 +135,7 @@ class OrderFilter(object):
     def exclude_marketplace_fulfilled_orders_and_lines(self, exclude_marketplace_fulfilled_orders_and_lines):
         """Sets the exclude_marketplace_fulfilled_orders_and_lines of this OrderFilter.
 
+        Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)  # noqa: E501
 
         :param exclude_marketplace_fulfilled_orders_and_lines: The exclude_marketplace_fulfilled_orders_and_lines of this OrderFilter.  # noqa: E501
         :type: bool
@@ -170,6 +176,7 @@ class OrderFilter(object):
     def page(self):
         """Gets the page of this OrderFilter.  # noqa: E501
 
+        The page to filter on. Starts at 1.  # noqa: E501
 
         :return: The page of this OrderFilter.  # noqa: E501
         :rtype: int
@@ -180,6 +187,7 @@ class OrderFilter(object):
     def page(self, page):
         """Sets the page of this OrderFilter.
 
+        The page to filter on. Starts at 1.  # noqa: E501
 
         :param page: The page of this OrderFilter.  # noqa: E501
         :type: int

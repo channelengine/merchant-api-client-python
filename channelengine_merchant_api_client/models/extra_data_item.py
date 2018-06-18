@@ -66,6 +66,7 @@ class ExtraDataItem(object):
     def key(self):
         """Gets the key of this ExtraDataItem.  # noqa: E501
 
+        Name of the extra data field  # noqa: E501
 
         :return: The key of this ExtraDataItem.  # noqa: E501
         :rtype: str
@@ -76,6 +77,7 @@ class ExtraDataItem(object):
     def key(self, key):
         """Sets the key of this ExtraDataItem.
 
+        Name of the extra data field  # noqa: E501
 
         :param key: The key of this ExtraDataItem.  # noqa: E501
         :type: str
@@ -87,6 +89,7 @@ class ExtraDataItem(object):
     def value(self):
         """Gets the value of this ExtraDataItem.  # noqa: E501
 
+        Value of the extra data field  # noqa: E501
 
         :return: The value of this ExtraDataItem.  # noqa: E501
         :rtype: str
@@ -97,6 +100,7 @@ class ExtraDataItem(object):
     def value(self, value):
         """Sets the value of this ExtraDataItem.
 
+        Value of the extra data field  # noqa: E501
 
         :param value: The value of this ExtraDataItem.  # noqa: E501
         :type: str
@@ -108,6 +112,7 @@ class ExtraDataItem(object):
     def type(self):
         """Gets the type of this ExtraDataItem.  # noqa: E501
 
+        Type of the extra data field  # noqa: E501
 
         :return: The type of this ExtraDataItem.  # noqa: E501
         :rtype: str
@@ -118,6 +123,7 @@ class ExtraDataItem(object):
     def type(self, type):
         """Sets the type of this ExtraDataItem.
 
+        Type of the extra data field  # noqa: E501
 
         :param type: The type of this ExtraDataItem.  # noqa: E501
         :type: str
@@ -135,6 +141,7 @@ class ExtraDataItem(object):
     def is_public(self):
         """Gets the is_public of this ExtraDataItem.  # noqa: E501
 
+        Add this field to the export of the product feed to the channel  # noqa: E501
 
         :return: The is_public of this ExtraDataItem.  # noqa: E501
         :rtype: bool
@@ -145,6 +152,7 @@ class ExtraDataItem(object):
     def is_public(self, is_public):
         """Sets the is_public of this ExtraDataItem.
 
+        Add this field to the export of the product feed to the channel  # noqa: E501
 
         :param is_public: The is_public of this ExtraDataItem.  # noqa: E501
         :type: bool

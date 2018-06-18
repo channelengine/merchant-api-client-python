@@ -142,11 +142,11 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param list[str] filter_statuses:
-        :param list[str] filter_merchant_order_nos:
-        :param bool filter_exclude_marketplace_fulfilled_orders_and_lines:
+        :param list[str] filter_statuses: Order status(es) to filter on
+        :param list[str] filter_merchant_order_nos: Filter on unique order reference used by the merchant
+        :param bool filter_exclude_marketplace_fulfilled_orders_and_lines: Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
         :param str filter_fulfillment_type: Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
-        :param int filter_page:
+        :param int filter_page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,11 +168,11 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param list[str] filter_statuses:
-        :param list[str] filter_merchant_order_nos:
-        :param bool filter_exclude_marketplace_fulfilled_orders_and_lines:
+        :param list[str] filter_statuses: Order status(es) to filter on
+        :param list[str] filter_merchant_order_nos: Filter on unique order reference used by the merchant
+        :param bool filter_exclude_marketplace_fulfilled_orders_and_lines: Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
         :param str filter_fulfillment_type: Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
-        :param int filter_page:
+        :param int filter_page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
