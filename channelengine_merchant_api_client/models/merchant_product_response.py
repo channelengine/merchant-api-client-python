@@ -34,6 +34,7 @@ class MerchantProductResponse(object):
     """
     swagger_types = {
         'is_active': 'bool',
+        'merchant_product_no': 'str',
         'name': 'str',
         'description': 'str',
         'brand': 'str',
@@ -65,6 +66,7 @@ class MerchantProductResponse(object):
 
     attribute_map = {
         'is_active': 'IsActive',
+        'merchant_product_no': 'MerchantProductNo',
         'name': 'Name',
         'description': 'Description',
         'brand': 'Brand',
@@ -94,10 +96,11 @@ class MerchantProductResponse(object):
         'extra_data': 'ExtraData'
     }
 
-    def __init__(self, is_active=None, name=None, description=None, brand=None, size=None, color=None, ean=None, manufacturer_product_number=None, stock=None, price=None, msrp=None, purchase_price=None, vat_rate_type=None, shipping_cost=None, shipping_time=None, url=None, image_url=None, extra_image_url1=None, extra_image_url2=None, extra_image_url3=None, extra_image_url4=None, extra_image_url5=None, extra_image_url6=None, extra_image_url7=None, extra_image_url8=None, extra_image_url9=None, category_trail=None, extra_data=None):  # noqa: E501
+    def __init__(self, is_active=None, merchant_product_no=None, name=None, description=None, brand=None, size=None, color=None, ean=None, manufacturer_product_number=None, stock=None, price=None, msrp=None, purchase_price=None, vat_rate_type=None, shipping_cost=None, shipping_time=None, url=None, image_url=None, extra_image_url1=None, extra_image_url2=None, extra_image_url3=None, extra_image_url4=None, extra_image_url5=None, extra_image_url6=None, extra_image_url7=None, extra_image_url8=None, extra_image_url9=None, category_trail=None, extra_data=None):  # noqa: E501
         """MerchantProductResponse - a model defined in Swagger"""  # noqa: E501
 
         self._is_active = None
+        self._merchant_product_no = None
         self._name = None
         self._description = None
         self._brand = None
@@ -129,6 +132,8 @@ class MerchantProductResponse(object):
 
         if is_active is not None:
             self.is_active = is_active
+        if merchant_product_no is not None:
+            self.merchant_product_no = merchant_product_no
         if name is not None:
             self.name = name
         if description is not None:
@@ -206,6 +211,29 @@ class MerchantProductResponse(object):
         """
 
         self._is_active = is_active
+
+    @property
+    def merchant_product_no(self):
+        """Gets the merchant_product_no of this MerchantProductResponse.  # noqa: E501
+
+        A unique identifier of the product. (sku)  # noqa: E501
+
+        :return: The merchant_product_no of this MerchantProductResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_product_no
+
+    @merchant_product_no.setter
+    def merchant_product_no(self, merchant_product_no):
+        """Sets the merchant_product_no of this MerchantProductResponse.
+
+        A unique identifier of the product. (sku)  # noqa: E501
+
+        :param merchant_product_no: The merchant_product_no of this MerchantProductResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_product_no = merchant_product_no
 
     @property
     def name(self):

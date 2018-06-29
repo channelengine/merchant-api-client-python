@@ -33,6 +33,8 @@ class OrderFilter(object):
     swagger_types = {
         'statuses': 'list[str]',
         'merchant_order_nos': 'list[str]',
+        'from_date': 'datetime',
+        'to_date': 'datetime',
         'exclude_marketplace_fulfilled_orders_and_lines': 'bool',
         'fulfillment_type': 'str',
         'page': 'int'
@@ -41,16 +43,20 @@ class OrderFilter(object):
     attribute_map = {
         'statuses': 'Statuses',
         'merchant_order_nos': 'MerchantOrderNos',
+        'from_date': 'FromDate',
+        'to_date': 'ToDate',
         'exclude_marketplace_fulfilled_orders_and_lines': 'ExcludeMarketplaceFulfilledOrdersAndLines',
         'fulfillment_type': 'FulfillmentType',
         'page': 'Page'
     }
 
-    def __init__(self, statuses=None, merchant_order_nos=None, exclude_marketplace_fulfilled_orders_and_lines=None, fulfillment_type=None, page=None):  # noqa: E501
+    def __init__(self, statuses=None, merchant_order_nos=None, from_date=None, to_date=None, exclude_marketplace_fulfilled_orders_and_lines=None, fulfillment_type=None, page=None):  # noqa: E501
         """OrderFilter - a model defined in Swagger"""  # noqa: E501
 
         self._statuses = None
         self._merchant_order_nos = None
+        self._from_date = None
+        self._to_date = None
         self._exclude_marketplace_fulfilled_orders_and_lines = None
         self._fulfillment_type = None
         self._page = None
@@ -60,6 +66,10 @@ class OrderFilter(object):
             self.statuses = statuses
         if merchant_order_nos is not None:
             self.merchant_order_nos = merchant_order_nos
+        if from_date is not None:
+            self.from_date = from_date
+        if to_date is not None:
+            self.to_date = to_date
         if exclude_marketplace_fulfilled_orders_and_lines is not None:
             self.exclude_marketplace_fulfilled_orders_and_lines = exclude_marketplace_fulfilled_orders_and_lines
         if fulfillment_type is not None:
@@ -119,6 +129,52 @@ class OrderFilter(object):
         """
 
         self._merchant_order_nos = merchant_order_nos
+
+    @property
+    def from_date(self):
+        """Gets the from_date of this OrderFilter.  # noqa: E501
+
+        Filter on the order date, starting from this date. This date is inclusive.  # noqa: E501
+
+        :return: The from_date of this OrderFilter.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._from_date
+
+    @from_date.setter
+    def from_date(self, from_date):
+        """Sets the from_date of this OrderFilter.
+
+        Filter on the order date, starting from this date. This date is inclusive.  # noqa: E501
+
+        :param from_date: The from_date of this OrderFilter.  # noqa: E501
+        :type: datetime
+        """
+
+        self._from_date = from_date
+
+    @property
+    def to_date(self):
+        """Gets the to_date of this OrderFilter.  # noqa: E501
+
+        Filter on the order date, until this date. This date is exclusive.  # noqa: E501
+
+        :return: The to_date of this OrderFilter.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._to_date
+
+    @to_date.setter
+    def to_date(self, to_date):
+        """Sets the to_date of this OrderFilter.
+
+        Filter on the order date, until this date. This date is exclusive.  # noqa: E501
+
+        :param to_date: The to_date of this OrderFilter.  # noqa: E501
+        :type: datetime
+        """
+
+        self._to_date = to_date
 
     @property
     def exclude_marketplace_fulfilled_orders_and_lines(self):

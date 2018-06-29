@@ -144,6 +144,8 @@ class OrderApi(object):
         :param async bool
         :param list[str] filter_statuses: Order status(es) to filter on
         :param list[str] filter_merchant_order_nos: Filter on unique order reference used by the merchant
+        :param datetime filter_from_date: Filter on the order date, starting from this date. This date is inclusive.
+        :param datetime filter_to_date: Filter on the order date, until this date. This date is exclusive.
         :param bool filter_exclude_marketplace_fulfilled_orders_and_lines: Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
         :param str filter_fulfillment_type: Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
         :param int filter_page: The page to filter on. Starts at 1.
@@ -170,6 +172,8 @@ class OrderApi(object):
         :param async bool
         :param list[str] filter_statuses: Order status(es) to filter on
         :param list[str] filter_merchant_order_nos: Filter on unique order reference used by the merchant
+        :param datetime filter_from_date: Filter on the order date, starting from this date. This date is inclusive.
+        :param datetime filter_to_date: Filter on the order date, until this date. This date is exclusive.
         :param bool filter_exclude_marketplace_fulfilled_orders_and_lines: Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
         :param str filter_fulfillment_type: Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
         :param int filter_page: The page to filter on. Starts at 1.
@@ -178,7 +182,7 @@ class OrderApi(object):
                  returns the request thread.
         """
 
-        all_params = ['filter_statuses', 'filter_merchant_order_nos', 'filter_exclude_marketplace_fulfilled_orders_and_lines', 'filter_fulfillment_type', 'filter_page']  # noqa: E501
+        all_params = ['filter_statuses', 'filter_merchant_order_nos', 'filter_from_date', 'filter_to_date', 'filter_exclude_marketplace_fulfilled_orders_and_lines', 'filter_fulfillment_type', 'filter_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -205,6 +209,10 @@ class OrderApi(object):
         if 'filter_merchant_order_nos' in params:
             query_params.append(('filter.merchantOrderNos', params['filter_merchant_order_nos']))  # noqa: E501
             collection_formats['filter.merchantOrderNos'] = 'multi'  # noqa: E501
+        if 'filter_from_date' in params:
+            query_params.append(('filter.fromDate', params['filter_from_date']))  # noqa: E501
+        if 'filter_to_date' in params:
+            query_params.append(('filter.toDate', params['filter_to_date']))  # noqa: E501
         if 'filter_exclude_marketplace_fulfilled_orders_and_lines' in params:
             query_params.append(('filter.excludeMarketplaceFulfilledOrdersAndLines', params['filter_exclude_marketplace_fulfilled_orders_and_lines']))  # noqa: E501
         if 'filter_fulfillment_type' in params:
