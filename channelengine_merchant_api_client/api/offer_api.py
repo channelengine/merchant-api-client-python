@@ -33,6 +33,111 @@ class OfferApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def offer_get_stock(self, skus, stock_location_ids, **kwargs):  # noqa: E501
+        """Get stock for products  # noqa: E501
+
+        Get stock of products at stock location(s)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.offer_get_stock(skus, stock_location_ids, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param list[str] skus: List of your products' sku's (required)
+        :param list[int] stock_location_ids: The ChannelEngine id of the stock location(s) (required)
+        :return: CollectionOfMerchantOfferGetStockResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.offer_get_stock_with_http_info(skus, stock_location_ids, **kwargs)  # noqa: E501
+        else:
+            (data) = self.offer_get_stock_with_http_info(skus, stock_location_ids, **kwargs)  # noqa: E501
+            return data
+
+    def offer_get_stock_with_http_info(self, skus, stock_location_ids, **kwargs):  # noqa: E501
+        """Get stock for products  # noqa: E501
+
+        Get stock of products at stock location(s)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.offer_get_stock_with_http_info(skus, stock_location_ids, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param list[str] skus: List of your products' sku's (required)
+        :param list[int] stock_location_ids: The ChannelEngine id of the stock location(s) (required)
+        :return: CollectionOfMerchantOfferGetStockResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['skus', 'stock_location_ids']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method offer_get_stock" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skus' is set
+        if ('skus' not in params or
+                params['skus'] is None):
+            raise ValueError("Missing the required parameter `skus` when calling `offer_get_stock`")  # noqa: E501
+        # verify the required parameter 'stock_location_ids' is set
+        if ('stock_location_ids' not in params or
+                params['stock_location_ids'] is None):
+            raise ValueError("Missing the required parameter `stock_location_ids` when calling `offer_get_stock`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'skus' in params:
+            query_params.append(('skus', params['skus']))  # noqa: E501
+            collection_formats['skus'] = 'multi'  # noqa: E501
+        if 'stock_location_ids' in params:
+            query_params.append(('stockLocationIds', params['stock_location_ids']))  # noqa: E501
+            collection_formats['stockLocationIds'] = 'multi'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v2/offer/stock', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CollectionOfMerchantOfferGetStockResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def offer_stock_price_update(self, updates, **kwargs):  # noqa: E501
         """Update stock or price.  # noqa: E501
 
@@ -105,11 +210,11 @@ class OfferApi(object):
             body_params = params['updates']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501

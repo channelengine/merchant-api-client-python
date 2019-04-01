@@ -202,7 +202,7 @@ class MerchantReturnRequest(object):
         :param reason: The reason of this MerchantReturnRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["PRODUCT_DEFECT", "PRODUCT_UNSATISFACTORY", "WRONG_PRODUCT", "TOO_MANY_PRODUCTS", "REFUSED", "REFUSED_DAMAGED", "WRONG_ADDRESS", "NOT_COLLECTED", "OTHER"]  # noqa: E501
+        allowed_values = ["PRODUCT_DEFECT", "PRODUCT_UNSATISFACTORY", "WRONG_PRODUCT", "TOO_MANY_PRODUCTS", "REFUSED", "REFUSED_DAMAGED", "WRONG_ADDRESS", "NOT_COLLECTED", "WRONG_SIZE", "OTHER"]  # noqa: E501
         if reason not in allowed_values:
             raise ValueError(
                 "Invalid value for `reason` ({0}), must be one of {1}"  # noqa: E501

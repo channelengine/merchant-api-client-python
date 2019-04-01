@@ -107,11 +107,11 @@ class ProductApi(object):
             body_params = params['products']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/x-www-form-urlencoded'])  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501
@@ -206,7 +206,7 @@ class ProductApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501
@@ -237,7 +237,9 @@ class ProductApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str filter_search: Search products by Name, MerchantProductNo, Ean or Brand
+        :param str filter_search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
+        :param list[str] filter_ean_list: Search products by submitting a list of EAN's
+        :param list[str] filter_merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
         :param int filter_page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantProductResponse
                  If the method is called asynchronously,
@@ -260,14 +262,16 @@ class ProductApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str filter_search: Search products by Name, MerchantProductNo, Ean or Brand
+        :param str filter_search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
+        :param list[str] filter_ean_list: Search products by submitting a list of EAN's
+        :param list[str] filter_merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
         :param int filter_page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantProductResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter_search', 'filter_page']  # noqa: E501
+        all_params = ['filter_search', 'filter_ean_list', 'filter_merchant_product_no_list', 'filter_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -290,6 +294,12 @@ class ProductApi(object):
         query_params = []
         if 'filter_search' in params:
             query_params.append(('filter.search', params['filter_search']))  # noqa: E501
+        if 'filter_ean_list' in params:
+            query_params.append(('filter.eanList', params['filter_ean_list']))  # noqa: E501
+            collection_formats['filter.eanList'] = 'multi'  # noqa: E501
+        if 'filter_merchant_product_no_list' in params:
+            query_params.append(('filter.merchantProductNoList', params['filter_merchant_product_no_list']))  # noqa: E501
+            collection_formats['filter.merchantProductNoList'] = 'multi'  # noqa: E501
         if 'filter_page' in params:
             query_params.append(('filter.page', params['filter_page']))  # noqa: E501
 
@@ -301,7 +311,7 @@ class ProductApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501
@@ -396,7 +406,7 @@ class ProductApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501

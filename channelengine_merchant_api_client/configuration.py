@@ -47,7 +47,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "https://demo.channelengine.net/api"
+        self.host = "https://localhost/api"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -243,5 +243,5 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2.0.0\n"\
-               "SDK Package Version: 2.6.7".\
+               "SDK Package Version: 2.7.0".\
                format(env=sys.platform, pyversion=sys.version)

@@ -262,7 +262,7 @@ class MerchantProductResponse(object):
     def description(self):
         """Gets the description of this MerchantProductResponse.  # noqa: E501
 
-        A description of the product  # noqa: E501
+        A description of the product. Can contain these HTML tags:  div, span, pre, p, br, hr, hgroup, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, strong, em, b, i, u, img, a, abbr, address, blockquote, area, audio, video, caption, table, tbody, td, tfoot, th, thead, tr  # noqa: E501
 
         :return: The description of this MerchantProductResponse.  # noqa: E501
         :rtype: str
@@ -273,7 +273,7 @@ class MerchantProductResponse(object):
     def description(self, description):
         """Sets the description of this MerchantProductResponse.
 
-        A description of the product  # noqa: E501
+        A description of the product. Can contain these HTML tags:  div, span, pre, p, br, hr, hgroup, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, strong, em, b, i, u, img, a, abbr, address, blockquote, area, audio, video, caption, table, tbody, td, tfoot, th, thead, tr  # noqa: E501
 
         :param description: The description of this MerchantProductResponse.  # noqa: E501
         :type: str

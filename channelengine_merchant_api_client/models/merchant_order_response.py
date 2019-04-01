@@ -301,7 +301,7 @@ class MerchantOrderResponse(object):
         :param status: The status of this MerchantOrderResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["IN_PROGRESS", "SHIPPED", "IN_BACKORDER", "CANCELED", "MANCO", "IN_COMBI", "CLOSED", "NEW", "RETURNED", "REQUIRES_CORRECTION"]  # noqa: E501
+        allowed_values = ["IN_PROGRESS", "SHIPPED", "IN_BACKORDER", "MANCO", "IN_COMBI", "CLOSED", "NEW", "RETURNED", "REQUIRES_CORRECTION"]  # noqa: E501
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
@@ -770,6 +770,8 @@ class MerchantOrderResponse(object):
         """
         if currency_code is None:
             raise ValueError("Invalid value for `currency_code`, must not be `None`")  # noqa: E501
+        if currency_code is not None and len(currency_code) > 3:
+            raise ValueError("Invalid value for `currency_code`, length must be less than or equal to `3`")  # noqa: E501
 
         self._currency_code = currency_code
 

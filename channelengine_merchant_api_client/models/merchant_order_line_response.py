@@ -34,6 +34,7 @@ class MerchantOrderLineResponse(object):
         'status': 'str',
         'is_fulfillment_by_marketplace': 'bool',
         'merchant_product_no': 'str',
+        'gtin': 'str',
         'unit_vat': 'float',
         'line_total_incl_vat': 'float',
         'line_vat': 'float',
@@ -54,6 +55,7 @@ class MerchantOrderLineResponse(object):
         'status': 'Status',
         'is_fulfillment_by_marketplace': 'IsFulfillmentByMarketplace',
         'merchant_product_no': 'MerchantProductNo',
+        'gtin': 'Gtin',
         'unit_vat': 'UnitVat',
         'line_total_incl_vat': 'LineTotalInclVat',
         'line_vat': 'LineVat',
@@ -70,12 +72,13 @@ class MerchantOrderLineResponse(object):
         'condition': 'Condition'
     }
 
-    def __init__(self, status=None, is_fulfillment_by_marketplace=None, merchant_product_no=None, unit_vat=None, line_total_incl_vat=None, line_vat=None, original_unit_price_incl_vat=None, original_unit_vat=None, original_line_total_incl_vat=None, original_line_vat=None, channel_product_no=None, quantity=None, cancellation_requested_quantity=None, unit_price_incl_vat=None, fee_fixed=None, fee_rate=None, condition=None):  # noqa: E501
+    def __init__(self, status=None, is_fulfillment_by_marketplace=None, merchant_product_no=None, gtin=None, unit_vat=None, line_total_incl_vat=None, line_vat=None, original_unit_price_incl_vat=None, original_unit_vat=None, original_line_total_incl_vat=None, original_line_vat=None, channel_product_no=None, quantity=None, cancellation_requested_quantity=None, unit_price_incl_vat=None, fee_fixed=None, fee_rate=None, condition=None):  # noqa: E501
         """MerchantOrderLineResponse - a model defined in Swagger"""  # noqa: E501
 
         self._status = None
         self._is_fulfillment_by_marketplace = None
         self._merchant_product_no = None
+        self._gtin = None
         self._unit_vat = None
         self._line_total_incl_vat = None
         self._line_vat = None
@@ -98,6 +101,8 @@ class MerchantOrderLineResponse(object):
             self.is_fulfillment_by_marketplace = is_fulfillment_by_marketplace
         if merchant_product_no is not None:
             self.merchant_product_no = merchant_product_no
+        if gtin is not None:
+            self.gtin = gtin
         if unit_vat is not None:
             self.unit_vat = unit_vat
         if line_total_incl_vat is not None:
@@ -114,7 +119,8 @@ class MerchantOrderLineResponse(object):
             self.original_line_vat = original_line_vat
         self.channel_product_no = channel_product_no
         self.quantity = quantity
-        self.cancellation_requested_quantity = cancellation_requested_quantity
+        if cancellation_requested_quantity is not None:
+            self.cancellation_requested_quantity = cancellation_requested_quantity
         self.unit_price_incl_vat = unit_price_incl_vat
         if fee_fixed is not None:
             self.fee_fixed = fee_fixed
@@ -143,7 +149,7 @@ class MerchantOrderLineResponse(object):
         :param status: The status of this MerchantOrderLineResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["IN_PROGRESS", "SHIPPED", "IN_BACKORDER", "CANCELED", "MANCO", "IN_COMBI", "CLOSED", "NEW", "RETURNED", "REQUIRES_CORRECTION"]  # noqa: E501
+        allowed_values = ["IN_PROGRESS", "SHIPPED", "IN_BACKORDER", "MANCO", "IN_COMBI", "CLOSED", "NEW", "RETURNED", "REQUIRES_CORRECTION"]  # noqa: E501
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
@@ -197,6 +203,29 @@ class MerchantOrderLineResponse(object):
         """
 
         self._merchant_product_no = merchant_product_no
+
+    @property
+    def gtin(self):
+        """Gets the gtin of this MerchantOrderLineResponse.  # noqa: E501
+
+        Either the GTIN (EAN, ISBN, UPC etc) provided by the channel, or the the GTIN belonging to the MerchantProductNo in ChannelEngine  # noqa: E501
+
+        :return: The gtin of this MerchantOrderLineResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._gtin
+
+    @gtin.setter
+    def gtin(self, gtin):
+        """Sets the gtin of this MerchantOrderLineResponse.
+
+        Either the GTIN (EAN, ISBN, UPC etc) provided by the channel, or the the GTIN belonging to the MerchantProductNo in ChannelEngine  # noqa: E501
+
+        :param gtin: The gtin of this MerchantOrderLineResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._gtin = gtin
 
     @property
     def unit_vat(self):
@@ -433,8 +462,6 @@ class MerchantOrderLineResponse(object):
         :param cancellation_requested_quantity: The cancellation_requested_quantity of this MerchantOrderLineResponse.  # noqa: E501
         :type: int
         """
-        if cancellation_requested_quantity is None:
-            raise ValueError("Invalid value for `cancellation_requested_quantity`, must not be `None`")  # noqa: E501
 
         self._cancellation_requested_quantity = cancellation_requested_quantity
 
@@ -529,7 +556,7 @@ class MerchantOrderLineResponse(object):
         :param condition: The condition of this MerchantOrderLineResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN"]  # noqa: E501
+        allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN", "USED_VERY_GOOD"]  # noqa: E501
         if condition not in allowed_values:
             raise ValueError(
                 "Invalid value for `condition` ({0}), must be one of {1}"  # noqa: E501

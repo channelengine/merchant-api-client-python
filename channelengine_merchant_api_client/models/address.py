@@ -216,7 +216,7 @@ class Address(object):
     def street_name(self):
         """Gets the street_name of this Address.  # noqa: E501
 
-        The name of the street (without house number information)  # noqa: E501
+        The name of the street (without house number information)  This field might be empty if address validation is disabled in ChannelEngine  # noqa: E501
 
         :return: The street_name of this Address.  # noqa: E501
         :rtype: str
@@ -227,7 +227,7 @@ class Address(object):
     def street_name(self, street_name):
         """Sets the street_name of this Address.
 
-        The name of the street (without house number information)  # noqa: E501
+        The name of the street (without house number information)  This field might be empty if address validation is disabled in ChannelEngine  # noqa: E501
 
         :param street_name: The street_name of this Address.  # noqa: E501
         :type: str
@@ -243,7 +243,7 @@ class Address(object):
     def house_nr(self):
         """Gets the house_nr of this Address.  # noqa: E501
 
-        The house number  # noqa: E501
+        The house number  This field might be empty if address validation is disabled in ChannelEngine  # noqa: E501
 
         :return: The house_nr of this Address.  # noqa: E501
         :rtype: str
@@ -254,7 +254,7 @@ class Address(object):
     def house_nr(self, house_nr):
         """Sets the house_nr of this Address.
 
-        The house number  # noqa: E501
+        The house number  This field might be empty if address validation is disabled in ChannelEngine  # noqa: E501
 
         :param house_nr: The house_nr of this Address.  # noqa: E501
         :type: str
@@ -270,7 +270,7 @@ class Address(object):
     def house_nr_addition(self):
         """Gets the house_nr_addition of this Address.  # noqa: E501
 
-        Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  # noqa: E501
+        Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  This field might be empty if address validation is disabled in ChannelEngine  # noqa: E501
 
         :return: The house_nr_addition of this Address.  # noqa: E501
         :rtype: str
@@ -281,7 +281,7 @@ class Address(object):
     def house_nr_addition(self, house_nr_addition):
         """Sets the house_nr_addition of this Address.
 
-        Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  # noqa: E501
+        Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  This field might be empty if address validation is disabled in ChannelEngine  # noqa: E501
 
         :param house_nr_addition: The house_nr_addition of this Address.  # noqa: E501
         :type: str

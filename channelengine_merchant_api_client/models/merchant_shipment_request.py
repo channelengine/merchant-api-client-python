@@ -202,7 +202,7 @@ class MerchantShipmentRequest(object):
     def method(self):
         """Gets the method of this MerchantShipmentRequest.  # noqa: E501
 
-        Shipment method (carrier)  # noqa: E501
+        Shipment method: the carrier used for shipping the package. E.g. DHL, postNL  # noqa: E501
 
         :return: The method of this MerchantShipmentRequest.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class MerchantShipmentRequest(object):
     def method(self, method):
         """Sets the method of this MerchantShipmentRequest.
 
-        Shipment method (carrier)  # noqa: E501
+        Shipment method: the carrier used for shipping the package. E.g. DHL, postNL  # noqa: E501
 
         :param method: The method of this MerchantShipmentRequest.  # noqa: E501
         :type: str

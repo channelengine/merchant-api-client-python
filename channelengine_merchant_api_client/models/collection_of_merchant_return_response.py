@@ -38,6 +38,7 @@ class CollectionOfMerchantReturnResponse(object):
         'total_count': 'int',
         'items_per_page': 'int',
         'status_code': 'int',
+        'log_id': 'int',
         'success': 'bool',
         'message': 'str',
         'validation_errors': 'dict(str, list[str])'
@@ -49,12 +50,13 @@ class CollectionOfMerchantReturnResponse(object):
         'total_count': 'TotalCount',
         'items_per_page': 'ItemsPerPage',
         'status_code': 'StatusCode',
+        'log_id': 'LogId',
         'success': 'Success',
         'message': 'Message',
         'validation_errors': 'ValidationErrors'
     }
 
-    def __init__(self, content=None, count=None, total_count=None, items_per_page=None, status_code=None, success=None, message=None, validation_errors=None):  # noqa: E501
+    def __init__(self, content=None, count=None, total_count=None, items_per_page=None, status_code=None, log_id=None, success=None, message=None, validation_errors=None):  # noqa: E501
         """CollectionOfMerchantReturnResponse - a model defined in Swagger"""  # noqa: E501
 
         self._content = None
@@ -62,6 +64,7 @@ class CollectionOfMerchantReturnResponse(object):
         self._total_count = None
         self._items_per_page = None
         self._status_code = None
+        self._log_id = None
         self._success = None
         self._message = None
         self._validation_errors = None
@@ -77,6 +80,8 @@ class CollectionOfMerchantReturnResponse(object):
             self.items_per_page = items_per_page
         if status_code is not None:
             self.status_code = status_code
+        if log_id is not None:
+            self.log_id = log_id
         if success is not None:
             self.success = success
         if message is not None:
@@ -194,6 +199,27 @@ class CollectionOfMerchantReturnResponse(object):
         """
 
         self._status_code = status_code
+
+    @property
+    def log_id(self):
+        """Gets the log_id of this CollectionOfMerchantReturnResponse.  # noqa: E501
+
+
+        :return: The log_id of this CollectionOfMerchantReturnResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._log_id
+
+    @log_id.setter
+    def log_id(self, log_id):
+        """Sets the log_id of this CollectionOfMerchantReturnResponse.
+
+
+        :param log_id: The log_id of this CollectionOfMerchantReturnResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._log_id = log_id
 
     @property
     def success(self):
