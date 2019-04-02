@@ -237,10 +237,10 @@ class ProductApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str filter_search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
-        :param list[str] filter_ean_list: Search products by submitting a list of EAN's
-        :param list[str] filter_merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
-        :param int filter_page: The page to filter on. Starts at 1.
+        :param str search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
+        :param list[str] ean_list: Search products by submitting a list of EAN's
+        :param list[str] merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
+        :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantProductResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -262,16 +262,16 @@ class ProductApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str filter_search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
-        :param list[str] filter_ean_list: Search products by submitting a list of EAN's
-        :param list[str] filter_merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
-        :param int filter_page: The page to filter on. Starts at 1.
+        :param str search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
+        :param list[str] ean_list: Search products by submitting a list of EAN's
+        :param list[str] merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
+        :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantProductResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter_search', 'filter_ean_list', 'filter_merchant_product_no_list', 'filter_page']  # noqa: E501
+        all_params = ['search', 'ean_list', 'merchant_product_no_list', 'page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -292,16 +292,16 @@ class ProductApi(object):
         path_params = {}
 
         query_params = []
-        if 'filter_search' in params:
-            query_params.append(('filter.search', params['filter_search']))  # noqa: E501
-        if 'filter_ean_list' in params:
-            query_params.append(('filter.eanList', params['filter_ean_list']))  # noqa: E501
-            collection_formats['filter.eanList'] = 'multi'  # noqa: E501
-        if 'filter_merchant_product_no_list' in params:
-            query_params.append(('filter.merchantProductNoList', params['filter_merchant_product_no_list']))  # noqa: E501
-            collection_formats['filter.merchantProductNoList'] = 'multi'  # noqa: E501
-        if 'filter_page' in params:
-            query_params.append(('filter.page', params['filter_page']))  # noqa: E501
+        if 'search' in params:
+            query_params.append(('search', params['search']))  # noqa: E501
+        if 'ean_list' in params:
+            query_params.append(('eanList', params['ean_list']))  # noqa: E501
+            collection_formats['eanList'] = 'multi'  # noqa: E501
+        if 'merchant_product_no_list' in params:
+            query_params.append(('merchantProductNoList', params['merchant_product_no_list']))  # noqa: E501
+            collection_formats['merchantProductNoList'] = 'multi'  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
 
         header_params = {}
 
