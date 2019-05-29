@@ -172,7 +172,8 @@ class MerchantOrderResponse(object):
             self.company_registration_no = company_registration_no
         if vat_no is not None:
             self.vat_no = vat_no
-        self.payment_method = payment_method
+        if payment_method is not None:
+            self.payment_method = payment_method
         self.shipping_costs_incl_vat = shipping_costs_incl_vat
         self.currency_code = currency_code
         self.order_date = order_date
@@ -714,8 +715,6 @@ class MerchantOrderResponse(object):
         :param payment_method: The payment_method of this MerchantOrderResponse.  # noqa: E501
         :type: str
         """
-        if payment_method is None:
-            raise ValueError("Invalid value for `payment_method`, must not be `None`")  # noqa: E501
         if payment_method is not None and len(payment_method) > 50:
             raise ValueError("Invalid value for `payment_method`, length must be less than or equal to `50`")  # noqa: E501
         if payment_method is not None and len(payment_method) < 0:
