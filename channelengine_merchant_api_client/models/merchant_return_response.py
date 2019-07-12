@@ -37,6 +37,8 @@ class MerchantReturnResponse(object):
         'lines': 'list[MerchantReturnLineResponse]',
         'created_at': 'datetime',
         'updated_at': 'datetime',
+        'merchant_return_no': 'str',
+        'channel_return_no': 'str',
         'id': 'int',
         'reason': 'str',
         'customer_comment': 'str',
@@ -50,6 +52,8 @@ class MerchantReturnResponse(object):
         'lines': 'Lines',
         'created_at': 'CreatedAt',
         'updated_at': 'UpdatedAt',
+        'merchant_return_no': 'MerchantReturnNo',
+        'channel_return_no': 'ChannelReturnNo',
         'id': 'Id',
         'reason': 'Reason',
         'customer_comment': 'CustomerComment',
@@ -58,13 +62,15 @@ class MerchantReturnResponse(object):
         'refund_excl_vat': 'RefundExclVat'
     }
 
-    def __init__(self, merchant_order_no=None, lines=None, created_at=None, updated_at=None, id=None, reason=None, customer_comment=None, merchant_comment=None, refund_incl_vat=None, refund_excl_vat=None):  # noqa: E501
+    def __init__(self, merchant_order_no=None, lines=None, created_at=None, updated_at=None, merchant_return_no=None, channel_return_no=None, id=None, reason=None, customer_comment=None, merchant_comment=None, refund_incl_vat=None, refund_excl_vat=None):  # noqa: E501
         """MerchantReturnResponse - a model defined in Swagger"""  # noqa: E501
 
         self._merchant_order_no = None
         self._lines = None
         self._created_at = None
         self._updated_at = None
+        self._merchant_return_no = None
+        self._channel_return_no = None
         self._id = None
         self._reason = None
         self._customer_comment = None
@@ -81,6 +87,10 @@ class MerchantReturnResponse(object):
             self.created_at = created_at
         if updated_at is not None:
             self.updated_at = updated_at
+        if merchant_return_no is not None:
+            self.merchant_return_no = merchant_return_no
+        if channel_return_no is not None:
+            self.channel_return_no = channel_return_no
         if id is not None:
             self.id = id
         if reason is not None:
@@ -183,6 +193,52 @@ class MerchantReturnResponse(object):
         """
 
         self._updated_at = updated_at
+
+    @property
+    def merchant_return_no(self):
+        """Gets the merchant_return_no of this MerchantReturnResponse.  # noqa: E501
+
+        The unique return reference used by the Merchant, will be empty in case of a channel or unacknowledged return  # noqa: E501
+
+        :return: The merchant_return_no of this MerchantReturnResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_return_no
+
+    @merchant_return_no.setter
+    def merchant_return_no(self, merchant_return_no):
+        """Sets the merchant_return_no of this MerchantReturnResponse.
+
+        The unique return reference used by the Merchant, will be empty in case of a channel or unacknowledged return  # noqa: E501
+
+        :param merchant_return_no: The merchant_return_no of this MerchantReturnResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_return_no = merchant_return_no
+
+    @property
+    def channel_return_no(self):
+        """Gets the channel_return_no of this MerchantReturnResponse.  # noqa: E501
+
+        The unique return reference used by the Channel, will be empty in case of a merchant return  # noqa: E501
+
+        :return: The channel_return_no of this MerchantReturnResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._channel_return_no
+
+    @channel_return_no.setter
+    def channel_return_no(self, channel_return_no):
+        """Sets the channel_return_no of this MerchantReturnResponse.
+
+        The unique return reference used by the Channel, will be empty in case of a merchant return  # noqa: E501
+
+        :param channel_return_no: The channel_return_no of this MerchantReturnResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._channel_return_no = channel_return_no
 
     @property
     def id(self):

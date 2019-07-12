@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from channelengine_merchant_api_client.models.extra_data_item import ExtraDataItem  # noqa: F401,E501
+from channelengine_merchant_api_client.models.merchant_product_extra_data_item_response import MerchantProductExtraDataItemResponse  # noqa: F401,E501
 
 
 class MerchantProductResponse(object):
@@ -35,6 +35,7 @@ class MerchantProductResponse(object):
     swagger_types = {
         'is_active': 'bool',
         'merchant_product_no': 'str',
+        'extra_data': 'list[MerchantProductExtraDataItemResponse]',
         'name': 'str',
         'description': 'str',
         'brand': 'str',
@@ -60,13 +61,13 @@ class MerchantProductResponse(object):
         'extra_image_url7': 'str',
         'extra_image_url8': 'str',
         'extra_image_url9': 'str',
-        'category_trail': 'str',
-        'extra_data': 'list[ExtraDataItem]'
+        'category_trail': 'str'
     }
 
     attribute_map = {
         'is_active': 'IsActive',
         'merchant_product_no': 'MerchantProductNo',
+        'extra_data': 'ExtraData',
         'name': 'Name',
         'description': 'Description',
         'brand': 'Brand',
@@ -92,15 +93,15 @@ class MerchantProductResponse(object):
         'extra_image_url7': 'ExtraImageUrl7',
         'extra_image_url8': 'ExtraImageUrl8',
         'extra_image_url9': 'ExtraImageUrl9',
-        'category_trail': 'CategoryTrail',
-        'extra_data': 'ExtraData'
+        'category_trail': 'CategoryTrail'
     }
 
-    def __init__(self, is_active=None, merchant_product_no=None, name=None, description=None, brand=None, size=None, color=None, ean=None, manufacturer_product_number=None, stock=None, price=None, msrp=None, purchase_price=None, vat_rate_type=None, shipping_cost=None, shipping_time=None, url=None, image_url=None, extra_image_url1=None, extra_image_url2=None, extra_image_url3=None, extra_image_url4=None, extra_image_url5=None, extra_image_url6=None, extra_image_url7=None, extra_image_url8=None, extra_image_url9=None, category_trail=None, extra_data=None):  # noqa: E501
+    def __init__(self, is_active=None, merchant_product_no=None, extra_data=None, name=None, description=None, brand=None, size=None, color=None, ean=None, manufacturer_product_number=None, stock=None, price=None, msrp=None, purchase_price=None, vat_rate_type=None, shipping_cost=None, shipping_time=None, url=None, image_url=None, extra_image_url1=None, extra_image_url2=None, extra_image_url3=None, extra_image_url4=None, extra_image_url5=None, extra_image_url6=None, extra_image_url7=None, extra_image_url8=None, extra_image_url9=None, category_trail=None):  # noqa: E501
         """MerchantProductResponse - a model defined in Swagger"""  # noqa: E501
 
         self._is_active = None
         self._merchant_product_no = None
+        self._extra_data = None
         self._name = None
         self._description = None
         self._brand = None
@@ -127,13 +128,14 @@ class MerchantProductResponse(object):
         self._extra_image_url8 = None
         self._extra_image_url9 = None
         self._category_trail = None
-        self._extra_data = None
         self.discriminator = None
 
         if is_active is not None:
             self.is_active = is_active
         if merchant_product_no is not None:
             self.merchant_product_no = merchant_product_no
+        if extra_data is not None:
+            self.extra_data = extra_data
         if name is not None:
             self.name = name
         if description is not None:
@@ -186,8 +188,6 @@ class MerchantProductResponse(object):
             self.extra_image_url9 = extra_image_url9
         if category_trail is not None:
             self.category_trail = category_trail
-        if extra_data is not None:
-            self.extra_data = extra_data
 
     @property
     def is_active(self):
@@ -234,6 +234,27 @@ class MerchantProductResponse(object):
         """
 
         self._merchant_product_no = merchant_product_no
+
+    @property
+    def extra_data(self):
+        """Gets the extra_data of this MerchantProductResponse.  # noqa: E501
+
+
+        :return: The extra_data of this MerchantProductResponse.  # noqa: E501
+        :rtype: list[MerchantProductExtraDataItemResponse]
+        """
+        return self._extra_data
+
+    @extra_data.setter
+    def extra_data(self, extra_data):
+        """Sets the extra_data of this MerchantProductResponse.
+
+
+        :param extra_data: The extra_data of this MerchantProductResponse.  # noqa: E501
+        :type: list[MerchantProductExtraDataItemResponse]
+        """
+
+        self._extra_data = extra_data
 
     @property
     def name(self):
@@ -838,29 +859,6 @@ class MerchantProductResponse(object):
         """
 
         self._category_trail = category_trail
-
-    @property
-    def extra_data(self):
-        """Gets the extra_data of this MerchantProductResponse.  # noqa: E501
-
-        An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.  # noqa: E501
-
-        :return: The extra_data of this MerchantProductResponse.  # noqa: E501
-        :rtype: list[ExtraDataItem]
-        """
-        return self._extra_data
-
-    @extra_data.setter
-    def extra_data(self, extra_data):
-        """Sets the extra_data of this MerchantProductResponse.
-
-        An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.  # noqa: E501
-
-        :param extra_data: The extra_data of this MerchantProductResponse.  # noqa: E501
-        :type: list[ExtraDataItem]
-        """
-
-        self._extra_data = extra_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

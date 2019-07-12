@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from channelengine_merchant_api_client.models.address import Address  # noqa: F401,E501
+from channelengine_merchant_api_client.models.merchant_address_response import MerchantAddressResponse  # noqa: F401,E501
 from channelengine_merchant_api_client.models.merchant_order_line_response import MerchantOrderLineResponse  # noqa: F401,E501
 
 
@@ -39,6 +39,9 @@ class MerchantOrderResponse(object):
         'channel_order_support': 'str',
         'channel_order_no': 'str',
         'status': 'str',
+        'is_business_order': 'bool',
+        'billing_address': 'MerchantAddressResponse',
+        'shipping_address': 'MerchantAddressResponse',
         'sub_total_incl_vat': 'float',
         'sub_total_vat': 'float',
         'shipping_costs_vat': 'float',
@@ -60,8 +63,6 @@ class MerchantOrderResponse(object):
         'currency_code': 'str',
         'order_date': 'datetime',
         'channel_customer_no': 'str',
-        'billing_address': 'Address',
-        'shipping_address': 'Address',
         'extra_data': 'dict(str, str)'
     }
 
@@ -71,6 +72,9 @@ class MerchantOrderResponse(object):
         'channel_order_support': 'ChannelOrderSupport',
         'channel_order_no': 'ChannelOrderNo',
         'status': 'Status',
+        'is_business_order': 'IsBusinessOrder',
+        'billing_address': 'BillingAddress',
+        'shipping_address': 'ShippingAddress',
         'sub_total_incl_vat': 'SubTotalInclVat',
         'sub_total_vat': 'SubTotalVat',
         'shipping_costs_vat': 'ShippingCostsVat',
@@ -92,12 +96,10 @@ class MerchantOrderResponse(object):
         'currency_code': 'CurrencyCode',
         'order_date': 'OrderDate',
         'channel_customer_no': 'ChannelCustomerNo',
-        'billing_address': 'BillingAddress',
-        'shipping_address': 'ShippingAddress',
         'extra_data': 'ExtraData'
     }
 
-    def __init__(self, id=None, channel_name=None, channel_order_support=None, channel_order_no=None, status=None, sub_total_incl_vat=None, sub_total_vat=None, shipping_costs_vat=None, total_incl_vat=None, total_vat=None, original_sub_total_incl_vat=None, original_sub_total_vat=None, original_shipping_costs_incl_vat=None, original_shipping_costs_vat=None, original_total_incl_vat=None, original_total_vat=None, lines=None, phone=None, email=None, company_registration_no=None, vat_no=None, payment_method=None, shipping_costs_incl_vat=None, currency_code=None, order_date=None, channel_customer_no=None, billing_address=None, shipping_address=None, extra_data=None):  # noqa: E501
+    def __init__(self, id=None, channel_name=None, channel_order_support=None, channel_order_no=None, status=None, is_business_order=None, billing_address=None, shipping_address=None, sub_total_incl_vat=None, sub_total_vat=None, shipping_costs_vat=None, total_incl_vat=None, total_vat=None, original_sub_total_incl_vat=None, original_sub_total_vat=None, original_shipping_costs_incl_vat=None, original_shipping_costs_vat=None, original_total_incl_vat=None, original_total_vat=None, lines=None, phone=None, email=None, company_registration_no=None, vat_no=None, payment_method=None, shipping_costs_incl_vat=None, currency_code=None, order_date=None, channel_customer_no=None, extra_data=None):  # noqa: E501
         """MerchantOrderResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -105,6 +107,9 @@ class MerchantOrderResponse(object):
         self._channel_order_support = None
         self._channel_order_no = None
         self._status = None
+        self._is_business_order = None
+        self._billing_address = None
+        self._shipping_address = None
         self._sub_total_incl_vat = None
         self._sub_total_vat = None
         self._shipping_costs_vat = None
@@ -126,8 +131,6 @@ class MerchantOrderResponse(object):
         self._currency_code = None
         self._order_date = None
         self._channel_customer_no = None
-        self._billing_address = None
-        self._shipping_address = None
         self._extra_data = None
         self.discriminator = None
 
@@ -141,6 +144,12 @@ class MerchantOrderResponse(object):
             self.channel_order_no = channel_order_no
         if status is not None:
             self.status = status
+        if is_business_order is not None:
+            self.is_business_order = is_business_order
+        if billing_address is not None:
+            self.billing_address = billing_address
+        if shipping_address is not None:
+            self.shipping_address = shipping_address
         if sub_total_incl_vat is not None:
             self.sub_total_incl_vat = sub_total_incl_vat
         if sub_total_vat is not None:
@@ -179,8 +188,6 @@ class MerchantOrderResponse(object):
         self.order_date = order_date
         if channel_customer_no is not None:
             self.channel_customer_no = channel_customer_no
-        self.billing_address = billing_address
-        self.shipping_address = shipping_address
         if extra_data is not None:
             self.extra_data = extra_data
 
@@ -310,6 +317,75 @@ class MerchantOrderResponse(object):
             )
 
         self._status = status
+
+    @property
+    def is_business_order(self):
+        """Gets the is_business_order of this MerchantOrderResponse.  # noqa: E501
+
+        Indicating whether the order is a business order  # noqa: E501
+
+        :return: The is_business_order of this MerchantOrderResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_business_order
+
+    @is_business_order.setter
+    def is_business_order(self, is_business_order):
+        """Sets the is_business_order of this MerchantOrderResponse.
+
+        Indicating whether the order is a business order  # noqa: E501
+
+        :param is_business_order: The is_business_order of this MerchantOrderResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_business_order = is_business_order
+
+    @property
+    def billing_address(self):
+        """Gets the billing_address of this MerchantOrderResponse.  # noqa: E501
+
+        The billing or invoice address  # noqa: E501
+
+        :return: The billing_address of this MerchantOrderResponse.  # noqa: E501
+        :rtype: MerchantAddressResponse
+        """
+        return self._billing_address
+
+    @billing_address.setter
+    def billing_address(self, billing_address):
+        """Sets the billing_address of this MerchantOrderResponse.
+
+        The billing or invoice address  # noqa: E501
+
+        :param billing_address: The billing_address of this MerchantOrderResponse.  # noqa: E501
+        :type: MerchantAddressResponse
+        """
+
+        self._billing_address = billing_address
+
+    @property
+    def shipping_address(self):
+        """Gets the shipping_address of this MerchantOrderResponse.  # noqa: E501
+
+        The shipping address  # noqa: E501
+
+        :return: The shipping_address of this MerchantOrderResponse.  # noqa: E501
+        :rtype: MerchantAddressResponse
+        """
+        return self._shipping_address
+
+    @shipping_address.setter
+    def shipping_address(self, shipping_address):
+        """Sets the shipping_address of this MerchantOrderResponse.
+
+        The shipping address  # noqa: E501
+
+        :param shipping_address: The shipping_address of this MerchantOrderResponse.  # noqa: E501
+        :type: MerchantAddressResponse
+        """
+
+        self._shipping_address = shipping_address
 
     @property
     def sub_total_incl_vat(self):
@@ -825,56 +901,6 @@ class MerchantOrderResponse(object):
             raise ValueError("Invalid value for `channel_customer_no`, length must be greater than or equal to `0`")  # noqa: E501
 
         self._channel_customer_no = channel_customer_no
-
-    @property
-    def billing_address(self):
-        """Gets the billing_address of this MerchantOrderResponse.  # noqa: E501
-
-        The billing or invoice address  # noqa: E501
-
-        :return: The billing_address of this MerchantOrderResponse.  # noqa: E501
-        :rtype: Address
-        """
-        return self._billing_address
-
-    @billing_address.setter
-    def billing_address(self, billing_address):
-        """Sets the billing_address of this MerchantOrderResponse.
-
-        The billing or invoice address  # noqa: E501
-
-        :param billing_address: The billing_address of this MerchantOrderResponse.  # noqa: E501
-        :type: Address
-        """
-        if billing_address is None:
-            raise ValueError("Invalid value for `billing_address`, must not be `None`")  # noqa: E501
-
-        self._billing_address = billing_address
-
-    @property
-    def shipping_address(self):
-        """Gets the shipping_address of this MerchantOrderResponse.  # noqa: E501
-
-        The shipping address  # noqa: E501
-
-        :return: The shipping_address of this MerchantOrderResponse.  # noqa: E501
-        :rtype: Address
-        """
-        return self._shipping_address
-
-    @shipping_address.setter
-    def shipping_address(self, shipping_address):
-        """Sets the shipping_address of this MerchantOrderResponse.
-
-        The shipping address  # noqa: E501
-
-        :param shipping_address: The shipping_address of this MerchantOrderResponse.  # noqa: E501
-        :type: Address
-        """
-        if shipping_address is None:
-            raise ValueError("Invalid value for `shipping_address`, must not be `None`")  # noqa: E501
-
-        self._shipping_address = shipping_address
 
     @property
     def extra_data(self):

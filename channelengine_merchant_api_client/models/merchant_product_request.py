@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from channelengine_merchant_api_client.models.extra_data_item import ExtraDataItem  # noqa: F401,E501
+from channelengine_merchant_api_client.models.merchant_product_extra_data_item_request import MerchantProductExtraDataItemRequest  # noqa: F401,E501
 
 
 class MerchantProductRequest(object):
@@ -36,6 +36,7 @@ class MerchantProductRequest(object):
         'merchant_product_no': 'str',
         'parent_merchant_product_no': 'str',
         'parent_merchant_product_no2': 'str',
+        'extra_data': 'list[MerchantProductExtraDataItemRequest]',
         'name': 'str',
         'description': 'str',
         'brand': 'str',
@@ -61,14 +62,14 @@ class MerchantProductRequest(object):
         'extra_image_url7': 'str',
         'extra_image_url8': 'str',
         'extra_image_url9': 'str',
-        'category_trail': 'str',
-        'extra_data': 'list[ExtraDataItem]'
+        'category_trail': 'str'
     }
 
     attribute_map = {
         'merchant_product_no': 'MerchantProductNo',
         'parent_merchant_product_no': 'ParentMerchantProductNo',
         'parent_merchant_product_no2': 'ParentMerchantProductNo2',
+        'extra_data': 'ExtraData',
         'name': 'Name',
         'description': 'Description',
         'brand': 'Brand',
@@ -94,16 +95,16 @@ class MerchantProductRequest(object):
         'extra_image_url7': 'ExtraImageUrl7',
         'extra_image_url8': 'ExtraImageUrl8',
         'extra_image_url9': 'ExtraImageUrl9',
-        'category_trail': 'CategoryTrail',
-        'extra_data': 'ExtraData'
+        'category_trail': 'CategoryTrail'
     }
 
-    def __init__(self, merchant_product_no=None, parent_merchant_product_no=None, parent_merchant_product_no2=None, name=None, description=None, brand=None, size=None, color=None, ean=None, manufacturer_product_number=None, stock=None, price=None, msrp=None, purchase_price=None, vat_rate_type=None, shipping_cost=None, shipping_time=None, url=None, image_url=None, extra_image_url1=None, extra_image_url2=None, extra_image_url3=None, extra_image_url4=None, extra_image_url5=None, extra_image_url6=None, extra_image_url7=None, extra_image_url8=None, extra_image_url9=None, category_trail=None, extra_data=None):  # noqa: E501
+    def __init__(self, merchant_product_no=None, parent_merchant_product_no=None, parent_merchant_product_no2=None, extra_data=None, name=None, description=None, brand=None, size=None, color=None, ean=None, manufacturer_product_number=None, stock=None, price=None, msrp=None, purchase_price=None, vat_rate_type=None, shipping_cost=None, shipping_time=None, url=None, image_url=None, extra_image_url1=None, extra_image_url2=None, extra_image_url3=None, extra_image_url4=None, extra_image_url5=None, extra_image_url6=None, extra_image_url7=None, extra_image_url8=None, extra_image_url9=None, category_trail=None):  # noqa: E501
         """MerchantProductRequest - a model defined in Swagger"""  # noqa: E501
 
         self._merchant_product_no = None
         self._parent_merchant_product_no = None
         self._parent_merchant_product_no2 = None
+        self._extra_data = None
         self._name = None
         self._description = None
         self._brand = None
@@ -130,7 +131,6 @@ class MerchantProductRequest(object):
         self._extra_image_url8 = None
         self._extra_image_url9 = None
         self._category_trail = None
-        self._extra_data = None
         self.discriminator = None
 
         if merchant_product_no is not None:
@@ -139,6 +139,8 @@ class MerchantProductRequest(object):
             self.parent_merchant_product_no = parent_merchant_product_no
         if parent_merchant_product_no2 is not None:
             self.parent_merchant_product_no2 = parent_merchant_product_no2
+        if extra_data is not None:
+            self.extra_data = extra_data
         if name is not None:
             self.name = name
         if description is not None:
@@ -191,8 +193,6 @@ class MerchantProductRequest(object):
             self.extra_image_url9 = extra_image_url9
         if category_trail is not None:
             self.category_trail = category_trail
-        if extra_data is not None:
-            self.extra_data = extra_data
 
     @property
     def merchant_product_no(self):
@@ -262,6 +262,29 @@ class MerchantProductRequest(object):
         """
 
         self._parent_merchant_product_no2 = parent_merchant_product_no2
+
+    @property
+    def extra_data(self):
+        """Gets the extra_data of this MerchantProductRequest.  # noqa: E501
+
+        An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.  # noqa: E501
+
+        :return: The extra_data of this MerchantProductRequest.  # noqa: E501
+        :rtype: list[MerchantProductExtraDataItemRequest]
+        """
+        return self._extra_data
+
+    @extra_data.setter
+    def extra_data(self, extra_data):
+        """Sets the extra_data of this MerchantProductRequest.
+
+        An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.  # noqa: E501
+
+        :param extra_data: The extra_data of this MerchantProductRequest.  # noqa: E501
+        :type: list[MerchantProductExtraDataItemRequest]
+        """
+
+        self._extra_data = extra_data
 
     @property
     def name(self):
@@ -866,29 +889,6 @@ class MerchantProductRequest(object):
         """
 
         self._category_trail = category_trail
-
-    @property
-    def extra_data(self):
-        """Gets the extra_data of this MerchantProductRequest.  # noqa: E501
-
-        An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.  # noqa: E501
-
-        :return: The extra_data of this MerchantProductRequest.  # noqa: E501
-        :rtype: list[ExtraDataItem]
-        """
-        return self._extra_data
-
-    @extra_data.setter
-    def extra_data(self, extra_data):
-        """Sets the extra_data of this MerchantProductRequest.
-
-        An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.  # noqa: E501
-
-        :param extra_data: The extra_data of this MerchantProductRequest.  # noqa: E501
-        :type: list[ExtraDataItem]
-        """
-
-        self._extra_data = extra_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

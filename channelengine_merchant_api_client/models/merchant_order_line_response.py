@@ -42,6 +42,7 @@ class MerchantOrderLineResponse(object):
         'original_unit_vat': 'float',
         'original_line_total_incl_vat': 'float',
         'original_line_vat': 'float',
+        'bundle_product_merchant_product_no': 'str',
         'channel_product_no': 'str',
         'quantity': 'int',
         'cancellation_requested_quantity': 'int',
@@ -63,6 +64,7 @@ class MerchantOrderLineResponse(object):
         'original_unit_vat': 'OriginalUnitVat',
         'original_line_total_incl_vat': 'OriginalLineTotalInclVat',
         'original_line_vat': 'OriginalLineVat',
+        'bundle_product_merchant_product_no': 'BundleProductMerchantProductNo',
         'channel_product_no': 'ChannelProductNo',
         'quantity': 'Quantity',
         'cancellation_requested_quantity': 'CancellationRequestedQuantity',
@@ -72,7 +74,7 @@ class MerchantOrderLineResponse(object):
         'condition': 'Condition'
     }
 
-    def __init__(self, status=None, is_fulfillment_by_marketplace=None, merchant_product_no=None, gtin=None, unit_vat=None, line_total_incl_vat=None, line_vat=None, original_unit_price_incl_vat=None, original_unit_vat=None, original_line_total_incl_vat=None, original_line_vat=None, channel_product_no=None, quantity=None, cancellation_requested_quantity=None, unit_price_incl_vat=None, fee_fixed=None, fee_rate=None, condition=None):  # noqa: E501
+    def __init__(self, status=None, is_fulfillment_by_marketplace=None, merchant_product_no=None, gtin=None, unit_vat=None, line_total_incl_vat=None, line_vat=None, original_unit_price_incl_vat=None, original_unit_vat=None, original_line_total_incl_vat=None, original_line_vat=None, bundle_product_merchant_product_no=None, channel_product_no=None, quantity=None, cancellation_requested_quantity=None, unit_price_incl_vat=None, fee_fixed=None, fee_rate=None, condition=None):  # noqa: E501
         """MerchantOrderLineResponse - a model defined in Swagger"""  # noqa: E501
 
         self._status = None
@@ -86,6 +88,7 @@ class MerchantOrderLineResponse(object):
         self._original_unit_vat = None
         self._original_line_total_incl_vat = None
         self._original_line_vat = None
+        self._bundle_product_merchant_product_no = None
         self._channel_product_no = None
         self._quantity = None
         self._cancellation_requested_quantity = None
@@ -117,6 +120,8 @@ class MerchantOrderLineResponse(object):
             self.original_line_total_incl_vat = original_line_total_incl_vat
         if original_line_vat is not None:
             self.original_line_vat = original_line_vat
+        if bundle_product_merchant_product_no is not None:
+            self.bundle_product_merchant_product_no = bundle_product_merchant_product_no
         self.channel_product_no = channel_product_no
         self.quantity = quantity
         if cancellation_requested_quantity is not None:
@@ -387,6 +392,29 @@ class MerchantOrderLineResponse(object):
         """
 
         self._original_line_vat = original_line_vat
+
+    @property
+    def bundle_product_merchant_product_no(self):
+        """Gets the bundle_product_merchant_product_no of this MerchantOrderLineResponse.  # noqa: E501
+
+        If the product is ordered part of a bundle, this field contains the MerchantProductNo of  the product bundle.  # noqa: E501
+
+        :return: The bundle_product_merchant_product_no of this MerchantOrderLineResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._bundle_product_merchant_product_no
+
+    @bundle_product_merchant_product_no.setter
+    def bundle_product_merchant_product_no(self, bundle_product_merchant_product_no):
+        """Sets the bundle_product_merchant_product_no of this MerchantOrderLineResponse.
+
+        If the product is ordered part of a bundle, this field contains the MerchantProductNo of  the product bundle.  # noqa: E501
+
+        :param bundle_product_merchant_product_no: The bundle_product_merchant_product_no of this MerchantOrderLineResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._bundle_product_merchant_product_no = bundle_product_merchant_product_no
 
     @property
     def channel_product_no(self):

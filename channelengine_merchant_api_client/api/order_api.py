@@ -43,7 +43,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param OrderAcknowledgement model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
+        :param MerchantOrderAcknowledgementRequest model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param OrderAcknowledgement model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
+        :param MerchantOrderAcknowledgementRequest model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -144,10 +144,12 @@ class OrderApi(object):
         :param async bool
         :param list[str] statuses: Order status(es) to filter on
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
+        :param list[str] channel_order_nos: Filter on unique order reference used by the channel
         :param datetime from_date: Filter on the order date, starting from this date. This date is inclusive.
         :param datetime to_date: Filter on the order date, until this date. This date is exclusive.
         :param bool exclude_marketplace_fulfilled_orders_and_lines: Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
         :param str fulfillment_type: Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
+        :param bool only_with_cancellation_requests: Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation.
         :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
@@ -172,17 +174,19 @@ class OrderApi(object):
         :param async bool
         :param list[str] statuses: Order status(es) to filter on
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
+        :param list[str] channel_order_nos: Filter on unique order reference used by the channel
         :param datetime from_date: Filter on the order date, starting from this date. This date is inclusive.
         :param datetime to_date: Filter on the order date, until this date. This date is exclusive.
         :param bool exclude_marketplace_fulfilled_orders_and_lines: Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
         :param str fulfillment_type: Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
+        :param bool only_with_cancellation_requests: Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation.
         :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['statuses', 'merchant_order_nos', 'from_date', 'to_date', 'exclude_marketplace_fulfilled_orders_and_lines', 'fulfillment_type', 'page']  # noqa: E501
+        all_params = ['statuses', 'merchant_order_nos', 'channel_order_nos', 'from_date', 'to_date', 'exclude_marketplace_fulfilled_orders_and_lines', 'fulfillment_type', 'only_with_cancellation_requests', 'page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -209,6 +213,9 @@ class OrderApi(object):
         if 'merchant_order_nos' in params:
             query_params.append(('merchantOrderNos', params['merchant_order_nos']))  # noqa: E501
             collection_formats['merchantOrderNos'] = 'multi'  # noqa: E501
+        if 'channel_order_nos' in params:
+            query_params.append(('channelOrderNos', params['channel_order_nos']))  # noqa: E501
+            collection_formats['channelOrderNos'] = 'multi'  # noqa: E501
         if 'from_date' in params:
             query_params.append(('fromDate', params['from_date']))  # noqa: E501
         if 'to_date' in params:
@@ -217,6 +224,8 @@ class OrderApi(object):
             query_params.append(('excludeMarketplaceFulfilledOrdersAndLines', params['exclude_marketplace_fulfilled_orders_and_lines']))  # noqa: E501
         if 'fulfillment_type' in params:
             query_params.append(('fulfillmentType', params['fulfillment_type']))  # noqa: E501
+        if 'only_with_cancellation_requests' in params:
+            query_params.append(('onlyWithCancellationRequests', params['only_with_cancellation_requests']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
 

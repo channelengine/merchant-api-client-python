@@ -148,7 +148,7 @@ class OfferApi(object):
 
         :param async bool
         :param list[MerchantStockPriceUpdateRequest] updates: References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both. (required)
-        :return: SingleOfCollectionsDictionary2Generic
+        :return: SingleOfDictionary2
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -169,7 +169,7 @@ class OfferApi(object):
 
         :param async bool
         :param list[MerchantStockPriceUpdateRequest] updates: References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both. (required)
-        :return: SingleOfCollectionsDictionary2Generic
+        :return: SingleOfDictionary2
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -227,7 +227,7 @@ class OfferApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SingleOfCollectionsDictionary2Generic',  # noqa: E501
+            response_type='SingleOfDictionary2',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
