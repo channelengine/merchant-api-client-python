@@ -237,7 +237,13 @@ class ReturnApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param datetime created_since: 
+        :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
+        :param datetime created_since: Deprecated, please use FromDate instead.
+        :param list[str] statuses: Return status(es) to filter on
+        :param list[str] reasons: Return reason(s) to filter on
+        :param datetime from_date: Filter on the creation date, starting from this date. This date is inclusive.
+        :param datetime to_date: Filter on the creation date, until this date. This date is exclusive.
+        :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -259,13 +265,19 @@ class ReturnApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param datetime created_since: 
+        :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
+        :param datetime created_since: Deprecated, please use FromDate instead.
+        :param list[str] statuses: Return status(es) to filter on
+        :param list[str] reasons: Return reason(s) to filter on
+        :param datetime from_date: Filter on the creation date, starting from this date. This date is inclusive.
+        :param datetime to_date: Filter on the creation date, until this date. This date is exclusive.
+        :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfMerchantReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['created_since']  # noqa: E501
+        all_params = ['merchant_order_nos', 'created_since', 'statuses', 'reasons', 'from_date', 'to_date', 'page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -286,8 +298,23 @@ class ReturnApi(object):
         path_params = {}
 
         query_params = []
+        if 'merchant_order_nos' in params:
+            query_params.append(('merchantOrderNos', params['merchant_order_nos']))  # noqa: E501
+            collection_formats['merchantOrderNos'] = 'multi'  # noqa: E501
         if 'created_since' in params:
             query_params.append(('createdSince', params['created_since']))  # noqa: E501
+        if 'statuses' in params:
+            query_params.append(('statuses', params['statuses']))  # noqa: E501
+            collection_formats['statuses'] = 'multi'  # noqa: E501
+        if 'reasons' in params:
+            query_params.append(('reasons', params['reasons']))  # noqa: E501
+            collection_formats['reasons'] = 'multi'  # noqa: E501
+        if 'from_date' in params:
+            query_params.append(('fromDate', params['from_date']))  # noqa: E501
+        if 'to_date' in params:
+            query_params.append(('toDate', params['to_date']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
 
         header_params = {}
 

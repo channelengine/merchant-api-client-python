@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "channelengine-merchant-api-client"
-VERSION = "2.8.1"
+VERSION = "2.8.2"
 # To install the library, run the following
 #
 # python setup.py install
