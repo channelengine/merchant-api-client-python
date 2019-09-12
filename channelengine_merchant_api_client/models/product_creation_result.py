@@ -145,6 +145,9 @@ class ProductCreationResult(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ProductCreationResult, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

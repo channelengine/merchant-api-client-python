@@ -529,6 +529,9 @@ class MerchantAddressResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantAddressResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

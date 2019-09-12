@@ -181,6 +181,9 @@ class MerchantProductExtraDataItemRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantProductExtraDataItemRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -33,21 +33,24 @@ class MerchantOfferGetStockResponse(object):
     swagger_types = {
         'merchant_product_no': 'str',
         'stock_location_id': 'int',
-        'stock': 'int'
+        'stock': 'int',
+        'updated_at': 'datetime'
     }
 
     attribute_map = {
         'merchant_product_no': 'MerchantProductNo',
         'stock_location_id': 'StockLocationId',
-        'stock': 'Stock'
+        'stock': 'Stock',
+        'updated_at': 'UpdatedAt'
     }
 
-    def __init__(self, merchant_product_no=None, stock_location_id=None, stock=None):  # noqa: E501
+    def __init__(self, merchant_product_no=None, stock_location_id=None, stock=None, updated_at=None):  # noqa: E501
         """MerchantOfferGetStockResponse - a model defined in Swagger"""  # noqa: E501
 
         self._merchant_product_no = None
         self._stock_location_id = None
         self._stock = None
+        self._updated_at = None
         self.discriminator = None
 
         if merchant_product_no is not None:
@@ -56,6 +59,8 @@ class MerchantOfferGetStockResponse(object):
             self.stock_location_id = stock_location_id
         if stock is not None:
             self.stock = stock
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
     def merchant_product_no(self):
@@ -126,6 +131,29 @@ class MerchantOfferGetStockResponse(object):
 
         self._stock = stock
 
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this MerchantOfferGetStockResponse.  # noqa: E501
+
+        The timestamp of the last stock update for the stock location  # noqa: E501
+
+        :return: The updated_at of this MerchantOfferGetStockResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this MerchantOfferGetStockResponse.
+
+        The timestamp of the last stock update for the stock location  # noqa: E501
+
+        :param updated_at: The updated_at of this MerchantOfferGetStockResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -147,6 +175,9 @@ class MerchantOfferGetStockResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantOfferGetStockResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

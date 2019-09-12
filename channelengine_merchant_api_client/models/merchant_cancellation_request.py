@@ -212,6 +212,9 @@ class MerchantCancellationRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantCancellationRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

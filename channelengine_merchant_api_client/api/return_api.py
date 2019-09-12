@@ -38,18 +38,18 @@ class ReturnApi(object):
 
         Mark (part of) an order as returned by the customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_declare_for_merchant(model, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_declare_for_merchant(model, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MerchantReturnRequest model:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.return_declare_for_merchant_with_http_info(model, **kwargs)  # noqa: E501
         else:
             (data) = self.return_declare_for_merchant_with_http_info(model, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ReturnApi(object):
 
         Mark (part of) an order as returned by the customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_declare_for_merchant_with_http_info(model, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_declare_for_merchant_with_http_info(model, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MerchantReturnRequest model:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ReturnApi(object):
         """
 
         all_params = ['model']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ReturnApi(object):
             files=local_var_files,
             response_type='ApiResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -135,20 +135,20 @@ class ReturnApi(object):
     def return_get_by_merchant_order_no(self, merchant_order_no, **kwargs):  # noqa: E501
         """Get Return  # noqa: E501
 
-        Retrieve a return based on the supplied merchant order number. This call is supposed  to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
+        Retrieve returns based on the supplied merchant order number. May return more than 1 result.  This call is supposed to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_by_merchant_order_no(merchant_order_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_get_by_merchant_order_no(merchant_order_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_order_no:  (required)
-        :return: CollectionOfMerchantReturnResponse
+        :return: CollectionOfMerchantSingleOrderReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.return_get_by_merchant_order_no_with_http_info(merchant_order_no, **kwargs)  # noqa: E501
         else:
             (data) = self.return_get_by_merchant_order_no_with_http_info(merchant_order_no, **kwargs)  # noqa: E501
@@ -157,21 +157,21 @@ class ReturnApi(object):
     def return_get_by_merchant_order_no_with_http_info(self, merchant_order_no, **kwargs):  # noqa: E501
         """Get Return  # noqa: E501
 
-        Retrieve a return based on the supplied merchant order number. This call is supposed  to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
+        Retrieve returns based on the supplied merchant order number. May return more than 1 result.  This call is supposed to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_by_merchant_order_no_with_http_info(merchant_order_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_get_by_merchant_order_no_with_http_info(merchant_order_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_order_no:  (required)
-        :return: CollectionOfMerchantReturnResponse
+        :return: CollectionOfMerchantSingleOrderReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['merchant_order_no']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -219,9 +219,9 @@ class ReturnApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CollectionOfMerchantReturnResponse',  # noqa: E501
+            response_type='CollectionOfMerchantSingleOrderReturnResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -232,11 +232,11 @@ class ReturnApi(object):
 
         Get all returns created by the channel. This call is supposed  to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_declared_by_channel(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_get_declared_by_channel(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
         :param datetime created_since: Deprecated, please use FromDate instead.
         :param list[str] statuses: Return status(es) to filter on
@@ -249,7 +249,7 @@ class ReturnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.return_get_declared_by_channel_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.return_get_declared_by_channel_with_http_info(**kwargs)  # noqa: E501
@@ -260,11 +260,11 @@ class ReturnApi(object):
 
         Get all returns created by the channel. This call is supposed  to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_declared_by_channel_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_get_declared_by_channel_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
         :param datetime created_since: Deprecated, please use FromDate instead.
         :param list[str] statuses: Return status(es) to filter on
@@ -278,7 +278,7 @@ class ReturnApi(object):
         """
 
         all_params = ['merchant_order_nos', 'created_since', 'statuses', 'reasons', 'from_date', 'to_date', 'page']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -339,7 +339,7 @@ class ReturnApi(object):
             files=local_var_files,
             response_type='CollectionOfMerchantReturnResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -350,17 +350,17 @@ class ReturnApi(object):
 
         Get all new / unhandled returns created by channels. This call is supposed  to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_unhandled(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_get_unhandled(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :return: CollectionOfMerchantReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.return_get_unhandled_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.return_get_unhandled_with_http_info(**kwargs)  # noqa: E501
@@ -371,18 +371,18 @@ class ReturnApi(object):
 
         Get all new / unhandled returns created by channels. This call is supposed  to be used by merchants. Channels should use the 'GET /v2/returns/channel'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_unhandled_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_get_unhandled_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :return: CollectionOfMerchantReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -426,7 +426,7 @@ class ReturnApi(object):
             files=local_var_files,
             response_type='CollectionOfMerchantReturnResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -437,18 +437,18 @@ class ReturnApi(object):
 
         Mark a return as received  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_update_for_merchant(model, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_update_for_merchant(model, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MerchantReturnUpdateRequest model:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.return_update_for_merchant_with_http_info(model, **kwargs)  # noqa: E501
         else:
             (data) = self.return_update_for_merchant_with_http_info(model, **kwargs)  # noqa: E501
@@ -459,11 +459,11 @@ class ReturnApi(object):
 
         Mark a return as received  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_update_for_merchant_with_http_info(model, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.return_update_for_merchant_with_http_info(model, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MerchantReturnUpdateRequest model:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
@@ -471,7 +471,7 @@ class ReturnApi(object):
         """
 
         all_params = ['model']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -525,7 +525,7 @@ class ReturnApi(object):
             files=local_var_files,
             response_type='ApiResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

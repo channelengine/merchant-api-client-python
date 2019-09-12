@@ -148,6 +148,9 @@ class MerchantStockPriceUpdateRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantStockPriceUpdateRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

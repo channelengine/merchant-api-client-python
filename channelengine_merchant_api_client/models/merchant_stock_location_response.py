@@ -119,6 +119,9 @@ class MerchantStockLocationResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantStockLocationResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

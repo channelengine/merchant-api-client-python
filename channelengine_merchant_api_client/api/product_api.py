@@ -38,18 +38,18 @@ class ProductApi(object):
 
         Upsert (update or create) products. The parent serves as the 'base' product of the children.  For example, the children could be different sizes or colors of the parent product.  For channels where every size and color are different products this does not make any difference  (the children will just be sent separately, while ignoring the parent).  But there are channels where the parent and the children need to be sent together, for example  when there is one product with a list of sizes. In this case all the product information is retrieved  from the parent product while the size list is generated from the children.    Note that the parent itself is a 'blueprint' of the child products and we do our best to make sure it  does not end up on the marketplaces itself. Only the children can be purchased.    It's not possible to nest parent and children more than one level (A parent can have many children,  but any child cannot itself also have children).    The supplied MerchantProductNo needs to be unique.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_create(products, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_create(products, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[MerchantProductRequest] products:  (required)
         :return: SingleOfProductCreationResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.product_create_with_http_info(products, **kwargs)  # noqa: E501
         else:
             (data) = self.product_create_with_http_info(products, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ProductApi(object):
 
         Upsert (update or create) products. The parent serves as the 'base' product of the children.  For example, the children could be different sizes or colors of the parent product.  For channels where every size and color are different products this does not make any difference  (the children will just be sent separately, while ignoring the parent).  But there are channels where the parent and the children need to be sent together, for example  when there is one product with a list of sizes. In this case all the product information is retrieved  from the parent product while the size list is generated from the children.    Note that the parent itself is a 'blueprint' of the child products and we do our best to make sure it  does not end up on the marketplaces itself. Only the children can be purchased.    It's not possible to nest parent and children more than one level (A parent can have many children,  but any child cannot itself also have children).    The supplied MerchantProductNo needs to be unique.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_create_with_http_info(products, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_create_with_http_info(products, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[MerchantProductRequest] products:  (required)
         :return: SingleOfProductCreationResult
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ProductApi(object):
         """
 
         all_params = ['products']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ProductApi(object):
             files=local_var_files,
             response_type='SingleOfProductCreationResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class ProductApi(object):
 
         Delete a product based on the merchant reference.  Note that we do not really delete a product, as the product  might still be referenced by orders etc. Therefore, the references  used for this product cannot be reused. We do however deactivate the product  which means that it will not be sent to channels.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_delete(merchant_product_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_delete(merchant_product_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_product_no:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.product_delete_with_http_info(merchant_product_no, **kwargs)  # noqa: E501
         else:
             (data) = self.product_delete_with_http_info(merchant_product_no, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class ProductApi(object):
 
         Delete a product based on the merchant reference.  Note that we do not really delete a product, as the product  might still be referenced by orders etc. Therefore, the references  used for this product cannot be reused. We do however deactivate the product  which means that it will not be sent to channels.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_delete_with_http_info(merchant_product_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_delete_with_http_info(merchant_product_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_product_no:  (required)
         :return: ApiResponse
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class ProductApi(object):
         """
 
         all_params = ['merchant_product_no']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -221,7 +221,7 @@ class ProductApi(object):
             files=local_var_files,
             response_type='ApiResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -232,11 +232,11 @@ class ProductApi(object):
 
         Retrieve all products  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_get_by_filter(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_get_by_filter(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
         :param list[str] ean_list: Search products by submitting a list of EAN's
         :param list[str] merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
@@ -246,7 +246,7 @@ class ProductApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.product_get_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.product_get_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -257,11 +257,11 @@ class ProductApi(object):
 
         Retrieve all products  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_get_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_get_by_filter_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str search: Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters.
         :param list[str] ean_list: Search products by submitting a list of EAN's
         :param list[str] merchant_product_no_list: Search products by submitting a list of MerchantProductNo's
@@ -272,7 +272,7 @@ class ProductApi(object):
         """
 
         all_params = ['search', 'ean_list', 'merchant_product_no_list', 'page']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -326,7 +326,7 @@ class ProductApi(object):
             files=local_var_files,
             response_type='CollectionOfMerchantProductResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -337,18 +337,18 @@ class ProductApi(object):
 
         Retrieve a product based on the merchant reference.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_get_by_merchant_product_no(merchant_product_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_get_by_merchant_product_no(merchant_product_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_product_no:  (required)
         :return: SingleOfMerchantProductResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.product_get_by_merchant_product_no_with_http_info(merchant_product_no, **kwargs)  # noqa: E501
         else:
             (data) = self.product_get_by_merchant_product_no_with_http_info(merchant_product_no, **kwargs)  # noqa: E501
@@ -359,11 +359,11 @@ class ProductApi(object):
 
         Retrieve a product based on the merchant reference.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.product_get_by_merchant_product_no_with_http_info(merchant_product_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.product_get_by_merchant_product_no_with_http_info(merchant_product_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_product_no:  (required)
         :return: SingleOfMerchantProductResponse
                  If the method is called asynchronously,
@@ -371,7 +371,7 @@ class ProductApi(object):
         """
 
         all_params = ['merchant_product_no']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -421,7 +421,7 @@ class ProductApi(object):
             files=local_var_files,
             response_type='SingleOfMerchantProductResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -38,18 +38,18 @@ class OrderApi(object):
 
         Acknowledge an order. By acknowledging the order the merchant can confirm that  the order has been imported. When acknowledging an order the merchant has to supply  references that uniquely identify the order and the order lines. These references  will be used in the other API calls.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_acknowledge(model, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_acknowledge(model, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MerchantOrderAcknowledgementRequest model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.order_acknowledge_with_http_info(model, **kwargs)  # noqa: E501
         else:
             (data) = self.order_acknowledge_with_http_info(model, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class OrderApi(object):
 
         Acknowledge an order. By acknowledging the order the merchant can confirm that  the order has been imported. When acknowledging an order the merchant has to supply  references that uniquely identify the order and the order lines. These references  will be used in the other API calls.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_acknowledge_with_http_info(model, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_acknowledge_with_http_info(model, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MerchantOrderAcknowledgementRequest model: Relations between the id's returned by ChannelEngine and the references which the merchant uses (required)
         :return: ApiResponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class OrderApi(object):
         """
 
         all_params = ['model']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class OrderApi(object):
             files=local_var_files,
             response_type='ApiResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class OrderApi(object):
 
         Fetch orders based on the provided OrderFilter  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_get_by_filter(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_get_by_filter(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[str] statuses: Order status(es) to filter on
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
         :param list[str] channel_order_nos: Filter on unique order reference used by the channel
@@ -156,7 +156,7 @@ class OrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.order_get_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.order_get_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -167,11 +167,11 @@ class OrderApi(object):
 
         Fetch orders based on the provided OrderFilter  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_get_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_get_by_filter_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[str] statuses: Order status(es) to filter on
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
         :param list[str] channel_order_nos: Filter on unique order reference used by the channel
@@ -187,7 +187,7 @@ class OrderApi(object):
         """
 
         all_params = ['statuses', 'merchant_order_nos', 'channel_order_nos', 'from_date', 'to_date', 'exclude_marketplace_fulfilled_orders_and_lines', 'fulfillment_type', 'only_with_cancellation_requests', 'page']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -252,7 +252,7 @@ class OrderApi(object):
             files=local_var_files,
             response_type='CollectionOfMerchantOrderResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -263,17 +263,17 @@ class OrderApi(object):
 
         Fetch newly placed orders (order with status NEW).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_get_new(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_get_new(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.order_get_new_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.order_get_new_with_http_info(**kwargs)  # noqa: E501
@@ -284,18 +284,18 @@ class OrderApi(object):
 
         Fetch newly placed orders (order with status NEW).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_get_new_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_get_new_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :return: CollectionOfMerchantOrderResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -339,7 +339,7 @@ class OrderApi(object):
             files=local_var_files,
             response_type='CollectionOfMerchantOrderResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -350,11 +350,11 @@ class OrderApi(object):
 
         Generates the ChannelEngine VAT invoice for this order in PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_invoice(merchant_order_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_invoice(merchant_order_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -362,7 +362,7 @@ class OrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.order_invoice_with_http_info(merchant_order_no, **kwargs)  # noqa: E501
         else:
             (data) = self.order_invoice_with_http_info(merchant_order_no, **kwargs)  # noqa: E501
@@ -373,11 +373,11 @@ class OrderApi(object):
 
         Generates the ChannelEngine VAT invoice for this order in PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_invoice_with_http_info(merchant_order_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_invoice_with_http_info(merchant_order_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -386,7 +386,7 @@ class OrderApi(object):
         """
 
         all_params = ['merchant_order_no', 'use_customer_culture']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -438,7 +438,7 @@ class OrderApi(object):
             files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -449,11 +449,11 @@ class OrderApi(object):
 
         Generates the ChannelEngine packing slip for this order in PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_packing_slip(merchant_order_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_packing_slip(merchant_order_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -461,7 +461,7 @@ class OrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.order_packing_slip_with_http_info(merchant_order_no, **kwargs)  # noqa: E501
         else:
             (data) = self.order_packing_slip_with_http_info(merchant_order_no, **kwargs)  # noqa: E501
@@ -472,11 +472,11 @@ class OrderApi(object):
 
         Generates the ChannelEngine packing slip for this order in PDF  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.order_packing_slip_with_http_info(merchant_order_no, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_packing_slip_with_http_info(merchant_order_no, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str merchant_order_no: The unique order reference as used by the merchant (required)
         :param bool use_customer_culture: Generate the invoice in the billing address' country's language
         :return: file
@@ -485,7 +485,7 @@ class OrderApi(object):
         """
 
         all_params = ['merchant_order_no', 'use_customer_culture']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -537,7 +537,7 @@ class OrderApi(object):
             files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

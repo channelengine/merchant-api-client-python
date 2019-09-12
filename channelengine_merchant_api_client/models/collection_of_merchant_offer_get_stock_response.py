@@ -305,6 +305,9 @@ class CollectionOfMerchantOfferGetStockResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CollectionOfMerchantOfferGetStockResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

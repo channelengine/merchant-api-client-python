@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "channelengine-merchant-api-client"
-VERSION = "2.8.2"
+VERSION = "2.8.5"
 # To install the library, run the following
 #
 # python setup.py install
@@ -22,7 +22,13 @@ VERSION = "2.8.2"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = [
+    "certifi>=2017.4.17",
+    "python-dateutil>=2.1",
+    "six>=1.10",
+    "urllib3>=1.23"
+]
+    
 
 setup(
     name=NAME,

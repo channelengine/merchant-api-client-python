@@ -121,6 +121,9 @@ class MerchantReturnUpdateRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MerchantReturnUpdateRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
