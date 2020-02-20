@@ -36,10 +36,16 @@ class MerchantOrderResponse(object):
     swagger_types = {
         'id': 'int',
         'channel_name': 'str',
+        'channel_id': 'int',
+        'global_channel_name': 'str',
+        'global_channel_id': 'int',
         'channel_order_support': 'str',
         'channel_order_no': 'str',
         'status': 'str',
         'is_business_order': 'bool',
+        'created_at': 'datetime',
+        'updated_at': 'datetime',
+        'merchant_comment': 'str',
         'billing_address': 'MerchantAddressResponse',
         'shipping_address': 'MerchantAddressResponse',
         'sub_total_incl_vat': 'float',
@@ -69,10 +75,16 @@ class MerchantOrderResponse(object):
     attribute_map = {
         'id': 'Id',
         'channel_name': 'ChannelName',
+        'channel_id': 'ChannelId',
+        'global_channel_name': 'GlobalChannelName',
+        'global_channel_id': 'GlobalChannelId',
         'channel_order_support': 'ChannelOrderSupport',
         'channel_order_no': 'ChannelOrderNo',
         'status': 'Status',
         'is_business_order': 'IsBusinessOrder',
+        'created_at': 'CreatedAt',
+        'updated_at': 'UpdatedAt',
+        'merchant_comment': 'MerchantComment',
         'billing_address': 'BillingAddress',
         'shipping_address': 'ShippingAddress',
         'sub_total_incl_vat': 'SubTotalInclVat',
@@ -99,15 +111,21 @@ class MerchantOrderResponse(object):
         'extra_data': 'ExtraData'
     }
 
-    def __init__(self, id=None, channel_name=None, channel_order_support=None, channel_order_no=None, status=None, is_business_order=None, billing_address=None, shipping_address=None, sub_total_incl_vat=None, sub_total_vat=None, shipping_costs_vat=None, total_incl_vat=None, total_vat=None, original_sub_total_incl_vat=None, original_sub_total_vat=None, original_shipping_costs_incl_vat=None, original_shipping_costs_vat=None, original_total_incl_vat=None, original_total_vat=None, lines=None, phone=None, email=None, company_registration_no=None, vat_no=None, payment_method=None, shipping_costs_incl_vat=None, currency_code=None, order_date=None, channel_customer_no=None, extra_data=None):  # noqa: E501
+    def __init__(self, id=None, channel_name=None, channel_id=None, global_channel_name=None, global_channel_id=None, channel_order_support=None, channel_order_no=None, status=None, is_business_order=None, created_at=None, updated_at=None, merchant_comment=None, billing_address=None, shipping_address=None, sub_total_incl_vat=None, sub_total_vat=None, shipping_costs_vat=None, total_incl_vat=None, total_vat=None, original_sub_total_incl_vat=None, original_sub_total_vat=None, original_shipping_costs_incl_vat=None, original_shipping_costs_vat=None, original_total_incl_vat=None, original_total_vat=None, lines=None, phone=None, email=None, company_registration_no=None, vat_no=None, payment_method=None, shipping_costs_incl_vat=None, currency_code=None, order_date=None, channel_customer_no=None, extra_data=None):  # noqa: E501
         """MerchantOrderResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._channel_name = None
+        self._channel_id = None
+        self._global_channel_name = None
+        self._global_channel_id = None
         self._channel_order_support = None
         self._channel_order_no = None
         self._status = None
         self._is_business_order = None
+        self._created_at = None
+        self._updated_at = None
+        self._merchant_comment = None
         self._billing_address = None
         self._shipping_address = None
         self._sub_total_incl_vat = None
@@ -138,6 +156,12 @@ class MerchantOrderResponse(object):
             self.id = id
         if channel_name is not None:
             self.channel_name = channel_name
+        if channel_id is not None:
+            self.channel_id = channel_id
+        if global_channel_name is not None:
+            self.global_channel_name = global_channel_name
+        if global_channel_id is not None:
+            self.global_channel_id = global_channel_id
         if channel_order_support is not None:
             self.channel_order_support = channel_order_support
         if channel_order_no is not None:
@@ -146,6 +170,12 @@ class MerchantOrderResponse(object):
             self.status = status
         if is_business_order is not None:
             self.is_business_order = is_business_order
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
+        if merchant_comment is not None:
+            self.merchant_comment = merchant_comment
         if billing_address is not None:
             self.billing_address = billing_address
         if shipping_address is not None:
@@ -218,7 +248,7 @@ class MerchantOrderResponse(object):
     def channel_name(self):
         """Gets the channel_name of this MerchantOrderResponse.  # noqa: E501
 
-        The name of the channel  # noqa: E501
+        The name of the channel for this specific environment/account  # noqa: E501
 
         :return: The channel_name of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -229,13 +259,82 @@ class MerchantOrderResponse(object):
     def channel_name(self, channel_name):
         """Sets the channel_name of this MerchantOrderResponse.
 
-        The name of the channel  # noqa: E501
+        The name of the channel for this specific environment/account  # noqa: E501
 
         :param channel_name: The channel_name of this MerchantOrderResponse.  # noqa: E501
         :type: str
         """
 
         self._channel_name = channel_name
+
+    @property
+    def channel_id(self):
+        """Gets the channel_id of this MerchantOrderResponse.  # noqa: E501
+
+        The unique ID of the channel for this specific environment/account  # noqa: E501
+
+        :return: The channel_id of this MerchantOrderResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._channel_id
+
+    @channel_id.setter
+    def channel_id(self, channel_id):
+        """Sets the channel_id of this MerchantOrderResponse.
+
+        The unique ID of the channel for this specific environment/account  # noqa: E501
+
+        :param channel_id: The channel_id of this MerchantOrderResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._channel_id = channel_id
+
+    @property
+    def global_channel_name(self):
+        """Gets the global_channel_name of this MerchantOrderResponse.  # noqa: E501
+
+        The name of the channel across all of ChannelEngine  # noqa: E501
+
+        :return: The global_channel_name of this MerchantOrderResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._global_channel_name
+
+    @global_channel_name.setter
+    def global_channel_name(self, global_channel_name):
+        """Sets the global_channel_name of this MerchantOrderResponse.
+
+        The name of the channel across all of ChannelEngine  # noqa: E501
+
+        :param global_channel_name: The global_channel_name of this MerchantOrderResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._global_channel_name = global_channel_name
+
+    @property
+    def global_channel_id(self):
+        """Gets the global_channel_id of this MerchantOrderResponse.  # noqa: E501
+
+        The unique ID of the channel across all of ChannelEngine  # noqa: E501
+
+        :return: The global_channel_id of this MerchantOrderResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._global_channel_id
+
+    @global_channel_id.setter
+    def global_channel_id(self, global_channel_id):
+        """Sets the global_channel_id of this MerchantOrderResponse.
+
+        The unique ID of the channel across all of ChannelEngine  # noqa: E501
+
+        :param global_channel_id: The global_channel_id of this MerchantOrderResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._global_channel_id = global_channel_id
 
     @property
     def channel_order_support(self):
@@ -270,7 +369,7 @@ class MerchantOrderResponse(object):
     def channel_order_no(self):
         """Gets the channel_order_no of this MerchantOrderResponse.  # noqa: E501
 
-        The unique order reference used by the channel  # noqa: E501
+        The order reference used by the channel.   This number is not guaranteed to be unique accross all orders,  because different channels can use the same order number format.  # noqa: E501
 
         :return: The channel_order_no of this MerchantOrderResponse.  # noqa: E501
         :rtype: str
@@ -281,7 +380,7 @@ class MerchantOrderResponse(object):
     def channel_order_no(self, channel_order_no):
         """Sets the channel_order_no of this MerchantOrderResponse.
 
-        The unique order reference used by the channel  # noqa: E501
+        The order reference used by the channel.   This number is not guaranteed to be unique accross all orders,  because different channels can use the same order number format.  # noqa: E501
 
         :param channel_order_no: The channel_order_no of this MerchantOrderResponse.  # noqa: E501
         :type: str
@@ -340,6 +439,75 @@ class MerchantOrderResponse(object):
         """
 
         self._is_business_order = is_business_order
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this MerchantOrderResponse.  # noqa: E501
+
+        The date the order was created in ChannelEngine  # noqa: E501
+
+        :return: The created_at of this MerchantOrderResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this MerchantOrderResponse.
+
+        The date the order was created in ChannelEngine  # noqa: E501
+
+        :param created_at: The created_at of this MerchantOrderResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this MerchantOrderResponse.  # noqa: E501
+
+        The date the order was last updated in ChannelEngine  # noqa: E501
+
+        :return: The updated_at of this MerchantOrderResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this MerchantOrderResponse.
+
+        The date the order was last updated in ChannelEngine  # noqa: E501
+
+        :param updated_at: The updated_at of this MerchantOrderResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
+
+    @property
+    def merchant_comment(self):
+        """Gets the merchant_comment of this MerchantOrderResponse.  # noqa: E501
+
+        The optional comment a merchant can add to an order  # noqa: E501
+
+        :return: The merchant_comment of this MerchantOrderResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_comment
+
+    @merchant_comment.setter
+    def merchant_comment(self, merchant_comment):
+        """Sets the merchant_comment of this MerchantOrderResponse.
+
+        The optional comment a merchant can add to an order  # noqa: E501
+
+        :param merchant_comment: The merchant_comment of this MerchantOrderResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_comment = merchant_comment
 
     @property
     def billing_address(self):
@@ -854,7 +1022,7 @@ class MerchantOrderResponse(object):
     def order_date(self):
         """Gets the order_date of this MerchantOrderResponse.  # noqa: E501
 
-        The date the order was done  # noqa: E501
+        The date the order was created at the channel  # noqa: E501
 
         :return: The order_date of this MerchantOrderResponse.  # noqa: E501
         :rtype: datetime
@@ -865,7 +1033,7 @@ class MerchantOrderResponse(object):
     def order_date(self, order_date):
         """Sets the order_date of this MerchantOrderResponse.
 
-        The date the order was done  # noqa: E501
+        The date the order was created at the channel  # noqa: E501
 
         :param order_date: The order_date of this MerchantOrderResponse.  # noqa: E501
         :type: datetime

@@ -143,6 +143,7 @@ class OrderApi(object):
 
         :param async_req bool
         :param list[str] statuses: Order status(es) to filter on
+        :param list[str] email_addresses: Client emailaddresses to filter on
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
         :param list[str] channel_order_nos: Filter on unique order reference used by the channel
         :param datetime from_date: Filter on the order date, starting from this date. This date is inclusive.
@@ -173,6 +174,7 @@ class OrderApi(object):
 
         :param async_req bool
         :param list[str] statuses: Order status(es) to filter on
+        :param list[str] email_addresses: Client emailaddresses to filter on
         :param list[str] merchant_order_nos: Filter on unique order reference used by the merchant
         :param list[str] channel_order_nos: Filter on unique order reference used by the channel
         :param datetime from_date: Filter on the order date, starting from this date. This date is inclusive.
@@ -186,7 +188,7 @@ class OrderApi(object):
                  returns the request thread.
         """
 
-        all_params = ['statuses', 'merchant_order_nos', 'channel_order_nos', 'from_date', 'to_date', 'exclude_marketplace_fulfilled_orders_and_lines', 'fulfillment_type', 'only_with_cancellation_requests', 'page']  # noqa: E501
+        all_params = ['statuses', 'email_addresses', 'merchant_order_nos', 'channel_order_nos', 'from_date', 'to_date', 'exclude_marketplace_fulfilled_orders_and_lines', 'fulfillment_type', 'only_with_cancellation_requests', 'page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -210,6 +212,9 @@ class OrderApi(object):
         if 'statuses' in params:
             query_params.append(('statuses', params['statuses']))  # noqa: E501
             collection_formats['statuses'] = 'multi'  # noqa: E501
+        if 'email_addresses' in params:
+            query_params.append(('emailAddresses', params['email_addresses']))  # noqa: E501
+            collection_formats['emailAddresses'] = 'multi'  # noqa: E501
         if 'merchant_order_nos' in params:
             query_params.append(('merchantOrderNos', params['merchant_order_nos']))  # noqa: E501
             collection_formats['merchantOrderNos'] = 'multi'  # noqa: E501
@@ -536,6 +541,105 @@ class OrderApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def order_update(self, model, **kwargs):  # noqa: E501
+        """Update Comment  # noqa: E501
+
+        Update the merchant comment for an order. Both the ChannelEngine order id as the   merchant order number can be used for updating a comment.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_update(model, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param MerchantOrderCommentUpdateRequest model:  (required)
+        :return: ApiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.order_update_with_http_info(model, **kwargs)  # noqa: E501
+        else:
+            (data) = self.order_update_with_http_info(model, **kwargs)  # noqa: E501
+            return data
+
+    def order_update_with_http_info(self, model, **kwargs):  # noqa: E501
+        """Update Comment  # noqa: E501
+
+        Update the merchant comment for an order. Both the ChannelEngine order id as the   merchant order number can be used for updating a comment.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.order_update_with_http_info(model, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param MerchantOrderCommentUpdateRequest model:  (required)
+        :return: ApiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['model']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method order_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'model' is set
+        if ('model' not in params or
+                params['model'] is None):
+            raise ValueError("Missing the required parameter `model` when calling `order_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'model' in params:
+            body_params = params['model']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v2/orders/comment', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ApiResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
