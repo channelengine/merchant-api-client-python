@@ -4,6 +4,8 @@ from __future__ import absolute_import
 
 # import apis into api package
 from channelengine_merchant_api_client.api.cancellation_api import CancellationApi
+from channelengine_merchant_api_client.api.channels_api import ChannelsApi
+from channelengine_merchant_api_client.api.listed_products_api import ListedProductsApi
 from channelengine_merchant_api_client.api.notification_api import NotificationApi
 from channelengine_merchant_api_client.api.offer_api import OfferApi
 from channelengine_merchant_api_client.api.order_api import OrderApi
