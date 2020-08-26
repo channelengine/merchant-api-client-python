@@ -34,7 +34,7 @@ def main():
 
     # Configure API key authorization: apikey
     config = Configuration()
-    config.api_key['apikey'] = 'xxxxxxxxxx'
+    config.api_key['apiKey'] = 'xxxxxxxxxx'
     config.host = 'https://demo.channelengine.net/api'
 
     client = ApiClient(config)
@@ -47,12 +47,13 @@ def main():
 
     try:
         # Merchant: Update offer
+        # returns a 200 with "product not found" warning in content
         offer = [{'MerchantProductNo': 'ABC123', 'Stock': '98'}]
-        pprint(offer_api.offer_stock_price_update(offer))
+        pprint(offer_api.offer_stock_price_update(merchant_stock_price_update_request=offer))
         
         # Merchant: Get returns
         two_years_ago = datetime.now() - relativedelta(years=2)
-        returns = return_api.return_get_declared_by_channel(two_years_ago)
+        returns = return_api.return_get_declared_by_channel(from_date=two_years_ago)
         pprint(returns)
 
         # Merchant: Get new orders
@@ -60,6 +61,7 @@ def main():
         pprint(new_orders)
 
         # Merchant: Get product by MPN
+        # raises a 404 on product not found
         product = product_api.product_get_by_merchant_product_no('ABC123')
         pprint(product)
 
