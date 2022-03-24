@@ -1,7 +1,7 @@
 # channelengine-api-client
 ## Requirements.
 
-Python 2.7 and 3.4+
+Python 3.6+
 
 ## Installation & Usage
 ### pip install
