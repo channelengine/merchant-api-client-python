@@ -84,7 +84,7 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'key': (str, none_type,),  # noqa: E501
+            'key': (str,),  # noqa: E501
             'value': (str, none_type,),  # noqa: E501
             'type': (ExtraDataType,),  # noqa: E501
             'is_public': (bool,),  # noqa: E501
@@ -109,8 +109,11 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, key, *args, **kwargs):  # noqa: E501
         """MerchantProductExtraDataItemResponse - a model defined in OpenAPI
+
+        Args:
+            key (str): Name of the extra data field.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -143,7 +146,6 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            key (str, none_type): Name of the extra data field.. [optional]  # noqa: E501
             value (str, none_type): Value of the extra data field.. [optional]  # noqa: E501
             type (ExtraDataType): [optional]  # noqa: E501
             is_public (bool): Add this field to the export of the product feed to the channel.. [optional]  # noqa: E501
@@ -174,6 +176,7 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.key = key
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,8 +197,11 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, key, *args, **kwargs):  # noqa: E501
         """MerchantProductExtraDataItemResponse - a model defined in OpenAPI
+
+        Args:
+            key (str): Name of the extra data field.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -228,7 +234,6 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            key (str, none_type): Name of the extra data field.. [optional]  # noqa: E501
             value (str, none_type): Value of the extra data field.. [optional]  # noqa: E501
             type (ExtraDataType): [optional]  # noqa: E501
             is_public (bool): Add this field to the export of the product feed to the channel.. [optional]  # noqa: E501
@@ -257,6 +262,7 @@ class MerchantProductExtraDataItemResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.key = key
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

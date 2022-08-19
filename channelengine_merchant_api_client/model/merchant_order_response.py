@@ -130,6 +130,7 @@ class MerchantOrderResponse(ModelNormal):
             'merchant_order_no': (str, none_type,),  # noqa: E501
             'status': (OrderStatusView,),  # noqa: E501
             'is_business_order': (bool,),  # noqa: E501
+            'acknowledged_date': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'merchant_comment': (str, none_type,),  # noqa: E501
@@ -176,6 +177,7 @@ class MerchantOrderResponse(ModelNormal):
         'merchant_order_no': 'MerchantOrderNo',  # noqa: E501
         'status': 'Status',  # noqa: E501
         'is_business_order': 'IsBusinessOrder',  # noqa: E501
+        'acknowledged_date': 'AcknowledgedDate',  # noqa: E501
         'created_at': 'CreatedAt',  # noqa: E501
         'updated_at': 'UpdatedAt',  # noqa: E501
         'merchant_comment': 'MerchantComment',  # noqa: E501
@@ -259,6 +261,7 @@ class MerchantOrderResponse(ModelNormal):
             merchant_order_no (str, none_type): The unique order reference used by the Merchant. [optional]  # noqa: E501
             status (OrderStatusView): [optional]  # noqa: E501
             is_business_order (bool): Indicating whether the order is a business order.. [optional]  # noqa: E501
+            acknowledged_date (datetime, none_type): The date the order was acknowledged in ChannelEngine.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date the order was created in ChannelEngine.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date the order was last updated in ChannelEngine.. [optional]  # noqa: E501
             merchant_comment (str, none_type): The optional comment a merchant can add to an order.. [optional]  # noqa: E501
@@ -383,6 +386,7 @@ class MerchantOrderResponse(ModelNormal):
             merchant_order_no (str, none_type): The unique order reference used by the Merchant. [optional]  # noqa: E501
             status (OrderStatusView): [optional]  # noqa: E501
             is_business_order (bool): Indicating whether the order is a business order.. [optional]  # noqa: E501
+            acknowledged_date (datetime, none_type): The date the order was acknowledged in ChannelEngine.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date the order was created in ChannelEngine.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date the order was last updated in ChannelEngine.. [optional]  # noqa: E501
             merchant_comment (str, none_type): The optional comment a merchant can add to an order.. [optional]  # noqa: E501

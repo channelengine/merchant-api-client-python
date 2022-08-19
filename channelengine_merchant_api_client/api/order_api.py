@@ -121,6 +121,8 @@ class OrderApi(object):
                     'is_acknowledged',
                     'from_updated_at_date',
                     'to_updated_at_date',
+                    'from_acknowledged_date',
+                    'to_acknowledged_date',
                     'page',
                 ],
                 'required': [],
@@ -169,6 +171,10 @@ class OrderApi(object):
                         (datetime,),
                     'to_updated_at_date':
                         (datetime,),
+                    'from_acknowledged_date':
+                        (datetime,),
+                    'to_acknowledged_date':
+                        (datetime,),
                     'page':
                         (int,),
                 },
@@ -189,6 +195,8 @@ class OrderApi(object):
                     'is_acknowledged': 'isAcknowledged',
                     'from_updated_at_date': 'fromUpdatedAtDate',
                     'to_updated_at_date': 'toUpdatedAtDate',
+                    'from_acknowledged_date': 'fromAcknowledgedDate',
+                    'to_acknowledged_date': 'toAcknowledgedDate',
                     'page': 'page',
                 },
                 'location_map': {
@@ -208,6 +216,8 @@ class OrderApi(object):
                     'is_acknowledged': 'query',
                     'from_updated_at_date': 'query',
                     'to_updated_at_date': 'query',
+                    'from_acknowledged_date': 'query',
+                    'to_acknowledged_date': 'query',
                     'page': 'query',
                 },
                 'collection_format_map': {
@@ -535,7 +545,9 @@ class OrderApi(object):
             stock_location_ids ([int]): Filter on stock locations. [optional]
             is_acknowledged (bool): Filter on acknowledged value. [optional]
             from_updated_at_date (datetime): Filter on the order update date, starting from this date. This date is inclusive.. [optional]
-            to_updated_at_date (datetime): Filter on the order update date, unitl from this date. This date is exclusive.. [optional]
+            to_updated_at_date (datetime): Filter on the order update date, unitl this date. This date is exclusive.. [optional]
+            from_acknowledged_date (datetime): Filter on the order acknowledged date, starting from this date. This date is inclusive.. [optional]
+            to_acknowledged_date (datetime): Filter on the order acknowledged date, unitl this date. This date is exclusive.. [optional]
             page (int): The page to filter on. Starts at 1.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

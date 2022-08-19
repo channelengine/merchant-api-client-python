@@ -26,6 +26,7 @@ from channelengine_merchant_api_client.model.collection_of_merchant_return_respo
 from channelengine_merchant_api_client.model.collection_of_merchant_single_order_return_response import CollectionOfMerchantSingleOrderReturnResponse
 from channelengine_merchant_api_client.model.creator_filter import CreatorFilter
 from channelengine_merchant_api_client.model.fulfillment_type import FulfillmentType
+from channelengine_merchant_api_client.model.merchant_return_acknowledge_request import MerchantReturnAcknowledgeRequest
 from channelengine_merchant_api_client.model.merchant_return_request import MerchantReturnRequest
 from channelengine_merchant_api_client.model.merchant_return_update_request import MerchantReturnUpdateRequest
 from channelengine_merchant_api_client.model.return_reason import ReturnReason
@@ -43,6 +44,58 @@ class ReturnApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.return_acknowledge_endpoint = _Endpoint(
+            settings={
+                'response_type': (ApiResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/v2/returns/merchant/acknowledge',
+                'operation_id': 'return_acknowledge',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'merchant_return_acknowledge_request',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'merchant_return_acknowledge_request':
+                        (MerchantReturnAcknowledgeRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'merchant_return_acknowledge_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client
+        )
         self.return_declare_for_merchant_endpoint = _Endpoint(
             settings={
                 'response_type': (ApiResponse,),
@@ -159,15 +212,16 @@ class ReturnApi(object):
             },
             params_map={
                 'all': [
-                    'channel_ids',
-                    'merchant_order_nos',
-                    'channel_order_nos',
-                    'fulfillment_type',
                     'statuses',
                     'reasons',
                     'from_date',
                     'to_date',
+                    'is_acknowledged',
                     'page',
+                    'channel_ids',
+                    'merchant_order_nos',
+                    'channel_order_nos',
+                    'fulfillment_type',
                 ],
                 'required': [],
                 'nullable': [
@@ -183,14 +237,6 @@ class ReturnApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'channel_ids':
-                        ([int],),
-                    'merchant_order_nos':
-                        ([str],),
-                    'channel_order_nos':
-                        ([str],),
-                    'fulfillment_type':
-                        (FulfillmentType,),
                     'statuses':
                         ([ReturnStatus],),
                     'reasons':
@@ -199,37 +245,49 @@ class ReturnApi(object):
                         (datetime,),
                     'to_date':
                         (datetime,),
+                    'is_acknowledged':
+                        (bool,),
                     'page':
                         (int,),
+                    'channel_ids':
+                        ([int],),
+                    'merchant_order_nos':
+                        ([str],),
+                    'channel_order_nos':
+                        ([str],),
+                    'fulfillment_type':
+                        (FulfillmentType,),
                 },
                 'attribute_map': {
-                    'channel_ids': 'channelIds',
-                    'merchant_order_nos': 'merchantOrderNos',
-                    'channel_order_nos': 'channelOrderNos',
-                    'fulfillment_type': 'fulfillmentType',
                     'statuses': 'statuses',
                     'reasons': 'reasons',
                     'from_date': 'fromDate',
                     'to_date': 'toDate',
+                    'is_acknowledged': 'isAcknowledged',
                     'page': 'page',
+                    'channel_ids': 'channelIds',
+                    'merchant_order_nos': 'merchantOrderNos',
+                    'channel_order_nos': 'channelOrderNos',
+                    'fulfillment_type': 'fulfillmentType',
                 },
                 'location_map': {
-                    'channel_ids': 'query',
-                    'merchant_order_nos': 'query',
-                    'channel_order_nos': 'query',
-                    'fulfillment_type': 'query',
                     'statuses': 'query',
                     'reasons': 'query',
                     'from_date': 'query',
                     'to_date': 'query',
+                    'is_acknowledged': 'query',
                     'page': 'query',
+                    'channel_ids': 'query',
+                    'merchant_order_nos': 'query',
+                    'channel_order_nos': 'query',
+                    'fulfillment_type': 'query',
                 },
                 'collection_format_map': {
+                    'statuses': 'multi',
+                    'reasons': 'multi',
                     'channel_ids': 'multi',
                     'merchant_order_nos': 'multi',
                     'channel_order_nos': 'multi',
-                    'statuses': 'multi',
-                    'reasons': 'multi',
                 }
             },
             headers_map={
@@ -262,6 +320,7 @@ class ReturnApi(object):
                     'reasons',
                     'from_date',
                     'to_date',
+                    'is_acknowledged',
                     'page',
                 ],
                 'required': [],
@@ -296,6 +355,8 @@ class ReturnApi(object):
                         (datetime,),
                     'to_date':
                         (datetime,),
+                    'is_acknowledged':
+                        (bool,),
                     'page':
                         (int,),
                 },
@@ -309,6 +370,7 @@ class ReturnApi(object):
                     'reasons': 'reasons',
                     'from_date': 'fromDate',
                     'to_date': 'toDate',
+                    'is_acknowledged': 'isAcknowledged',
                     'page': 'page',
                 },
                 'location_map': {
@@ -321,6 +383,7 @@ class ReturnApi(object):
                     'reasons': 'query',
                     'from_date': 'query',
                     'to_date': 'query',
+                    'is_acknowledged': 'query',
                     'page': 'query',
                 },
                 'collection_format_map': {
@@ -446,6 +509,67 @@ class ReturnApi(object):
             },
             api_client=api_client
         )
+
+    def return_acknowledge(
+        self,
+        **kwargs
+    ):
+        """Acknowledge Return.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.return_acknowledge(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            merchant_return_acknowledge_request (MerchantReturnAcknowledgeRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ApiResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.return_acknowledge_endpoint.call_with_http_info(**kwargs)
 
     def return_declare_for_merchant(
         self,
@@ -590,15 +714,16 @@ class ReturnApi(object):
 
 
         Keyword Args:
-            channel_ids ([int]): Filter on Channel IDs. [optional]
-            merchant_order_nos ([str]): Filter on unique order reference used by the merchant.. [optional]
-            channel_order_nos ([str]): Filter on unique order reference used by the channel.. [optional]
-            fulfillment_type (FulfillmentType): Filter on the fulfillment type of the order.. [optional]
             statuses ([ReturnStatus]): Return status(es) to filter on.. [optional]
             reasons ([ReturnReason]): Return reason(s) to filter on.. [optional]
             from_date (datetime): Filter on the creation date, starting from this date. This date is inclusive.. [optional]
             to_date (datetime): Filter on the creation date, until this date. This date is exclusive.. [optional]
+            is_acknowledged (bool): Filters based on acknowledgements. [optional]
             page (int): The page to filter on. Starts at 1.. [optional]
+            channel_ids ([int]): Filter on Channel IDs. [optional]
+            merchant_order_nos ([str]): Filter on unique order reference used by the merchant.. [optional]
+            channel_order_nos ([str]): Filter on unique order reference used by the channel.. [optional]
+            fulfillment_type (FulfillmentType): Filter on the fulfillment type of the order.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -669,6 +794,7 @@ class ReturnApi(object):
             reasons ([ReturnReason]): Return reason(s) to filter on.. [optional]
             from_date (datetime): Filter on the creation date, starting from this date. This date is inclusive.. [optional]
             to_date (datetime): Filter on the creation date, until this date. This date is exclusive.. [optional]
+            is_acknowledged (bool): Filters based on acknowledgements. [optional]
             page (int): The page to filter on. Starts at 1.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

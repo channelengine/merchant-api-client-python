@@ -117,6 +117,7 @@ class MerchantReturnRequest(ModelNormal):
             'refund_incl_vat': (float,),  # noqa: E501
             'refund_excl_vat': (float,),  # noqa: E501
             'return_date': (datetime, none_type,),  # noqa: E501
+            'extra_data': ({str: (str,)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -135,6 +136,7 @@ class MerchantReturnRequest(ModelNormal):
         'refund_incl_vat': 'RefundInclVat',  # noqa: E501
         'refund_excl_vat': 'RefundExclVat',  # noqa: E501
         'return_date': 'ReturnDate',  # noqa: E501
+        'extra_data': 'ExtraData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -190,6 +192,7 @@ class MerchantReturnRequest(ModelNormal):
             refund_incl_vat (float): Refund amount incl. VAT.. [optional]  # noqa: E501
             refund_excl_vat (float): Refund amount excl. VAT.. [optional]  # noqa: E501
             return_date (datetime, none_type): The date at which the return was originally created in the source system (if available).. [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the return. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -286,6 +289,7 @@ class MerchantReturnRequest(ModelNormal):
             refund_incl_vat (float): Refund amount incl. VAT.. [optional]  # noqa: E501
             refund_excl_vat (float): Refund amount excl. VAT.. [optional]  # noqa: E501
             return_date (datetime, none_type): The date at which the return was originally created in the source system (if available).. [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the return. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -109,6 +109,7 @@ class MerchantReturnResponse(ModelNormal):
             'merchant_return_no': (str, none_type,),  # noqa: E501
             'channel_return_no': (str, none_type,),  # noqa: E501
             'status': (ReturnStatus,),  # noqa: E501
+            'acknowledged_date': (datetime, none_type,),  # noqa: E501
             'id': (int,),  # noqa: E501
             'reason': (ReturnReason,),  # noqa: E501
             'customer_comment': (str, none_type,),  # noqa: E501
@@ -116,6 +117,7 @@ class MerchantReturnResponse(ModelNormal):
             'refund_incl_vat': (float,),  # noqa: E501
             'refund_excl_vat': (float,),  # noqa: E501
             'return_date': (datetime, none_type,),  # noqa: E501
+            'extra_data': ({str: (str,)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -135,6 +137,7 @@ class MerchantReturnResponse(ModelNormal):
         'merchant_return_no': 'MerchantReturnNo',  # noqa: E501
         'channel_return_no': 'ChannelReturnNo',  # noqa: E501
         'status': 'Status',  # noqa: E501
+        'acknowledged_date': 'AcknowledgedDate',  # noqa: E501
         'id': 'Id',  # noqa: E501
         'reason': 'Reason',  # noqa: E501
         'customer_comment': 'CustomerComment',  # noqa: E501
@@ -142,6 +145,7 @@ class MerchantReturnResponse(ModelNormal):
         'refund_incl_vat': 'RefundInclVat',  # noqa: E501
         'refund_excl_vat': 'RefundExclVat',  # noqa: E501
         'return_date': 'ReturnDate',  # noqa: E501
+        'extra_data': 'ExtraData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -196,6 +200,7 @@ class MerchantReturnResponse(ModelNormal):
             merchant_return_no (str, none_type): The unique return reference used by the Merchant, will be empty in case of a channel or unacknowledged return.. [optional]  # noqa: E501
             channel_return_no (str, none_type): The unique return reference used by the Channel, will be empty in case of a merchant return.. [optional]  # noqa: E501
             status (ReturnStatus): [optional]  # noqa: E501
+            acknowledged_date (datetime, none_type): Date of acknowledgement. [optional]  # noqa: E501
             id (int): The unique return reference used by ChannelEngine.. [optional]  # noqa: E501
             reason (ReturnReason): [optional]  # noqa: E501
             customer_comment (str, none_type): Optional. Comment of customer on the (reason of) the return.. [optional]  # noqa: E501
@@ -203,6 +208,7 @@ class MerchantReturnResponse(ModelNormal):
             refund_incl_vat (float): Refund amount incl. VAT.. [optional]  # noqa: E501
             refund_excl_vat (float): Refund amount excl. VAT.. [optional]  # noqa: E501
             return_date (datetime, none_type): The date at which the return was originally created in the source system (if available).. [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the return. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -295,6 +301,7 @@ class MerchantReturnResponse(ModelNormal):
             merchant_return_no (str, none_type): The unique return reference used by the Merchant, will be empty in case of a channel or unacknowledged return.. [optional]  # noqa: E501
             channel_return_no (str, none_type): The unique return reference used by the Channel, will be empty in case of a merchant return.. [optional]  # noqa: E501
             status (ReturnStatus): [optional]  # noqa: E501
+            acknowledged_date (datetime, none_type): Date of acknowledgement. [optional]  # noqa: E501
             id (int): The unique return reference used by ChannelEngine.. [optional]  # noqa: E501
             reason (ReturnReason): [optional]  # noqa: E501
             customer_comment (str, none_type): Optional. Comment of customer on the (reason of) the return.. [optional]  # noqa: E501
@@ -302,6 +309,7 @@ class MerchantReturnResponse(ModelNormal):
             refund_incl_vat (float): Refund amount incl. VAT.. [optional]  # noqa: E501
             refund_excl_vat (float): Refund amount excl. VAT.. [optional]  # noqa: E501
             return_date (datetime, none_type): The date at which the return was originally created in the source system (if available).. [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the return. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

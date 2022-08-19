@@ -89,6 +89,7 @@ class MerchantReturnLineResponse(ModelNormal):
             'merchant_product_no': (str, none_type,),  # noqa: E501
             'order_line': (MerchantOrderLineResponse,),  # noqa: E501
             'shipment_status': (ShipmentLineStatus,),  # noqa: E501
+            'extra_data': ({str: (str,)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,6 +102,7 @@ class MerchantReturnLineResponse(ModelNormal):
         'merchant_product_no': 'MerchantProductNo',  # noqa: E501
         'order_line': 'OrderLine',  # noqa: E501
         'shipment_status': 'ShipmentStatus',  # noqa: E501
+        'extra_data': 'ExtraData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,6 +152,7 @@ class MerchantReturnLineResponse(ModelNormal):
             merchant_product_no (str, none_type): The unique product reference used by the Merchant (sku).. [optional]  # noqa: E501
             order_line (MerchantOrderLineResponse): [optional]  # noqa: E501
             shipment_status (ShipmentLineStatus): [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the returnline. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,6 +241,7 @@ class MerchantReturnLineResponse(ModelNormal):
             merchant_product_no (str, none_type): The unique product reference used by the Merchant (sku).. [optional]  # noqa: E501
             order_line (MerchantOrderLineResponse): [optional]  # noqa: E501
             shipment_status (ShipmentLineStatus): [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the returnline. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
